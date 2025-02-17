@@ -2788,13 +2788,14 @@
 		(uuid "7addc123-9c87-4366-986d-aa5c72a5a31e")
 	)
 	(gr_text "OUT"
-		(at 109 50 90)
+		(at 108.95 49.9 90)
 		(layer "F.SilkS")
 		(uuid "20b21906-8284-4552-9c95-683c49f077e1")
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.25)
+				(thickness 0.2)
+				(bold yes)
 			)
 		)
 	)
@@ -2805,18 +2806,20 @@
 		(effects
 			(font
 				(size 0.5 0.5)
-				(thickness 0.125)
+				(thickness 0.1)
+				(bold yes)
 			)
 		)
 	)
 	(gr_text "OPA928DT/R\nG = 100M\nCf ~ 160 fF"
-		(at 99.95 65.45 0)
+		(at 99.85 65.5 0)
 		(layer "F.SilkS")
 		(uuid "3e8b705b-befb-4a68-889a-83e2e5d788c8")
 		(effects
 			(font
 				(size 0.5 0.5)
-				(thickness 0.125)
+				(thickness 0.1)
+				(bold yes)
 			)
 		)
 	)
