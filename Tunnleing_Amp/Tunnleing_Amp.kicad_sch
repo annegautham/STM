@@ -1490,12 +1490,6 @@
 		)
 	)
 	(junction
-		(at 172.72 92.71)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0d955690-a081-4968-8608-54f64b668af1")
-	)
-	(junction
 		(at 157.48 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1508,10 +1502,10 @@
 		(uuid "3b891ce9-74a3-4dca-b3d3-a9021f90c1bc")
 	)
 	(junction
-		(at 105.41 92.71)
+		(at 176.53 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6d0441b8-41d0-46e7-bb00-3530d3217001")
+		(uuid "604d0498-c1a8-4bd9-86a7-eb61aa322bd3")
 	)
 	(junction
 		(at 109.22 92.71)
@@ -1713,13 +1707,23 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 92.71) (xy 180.34 92.71)
+			(xy 168.91 92.71) (xy 176.53 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "4cc22395-95a9-43e8-afd2-c0c24548fd48")
+	)
+	(wire
+		(pts
+			(xy 176.53 92.71) (xy 180.34 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "515ad1c4-444b-4c27-83b0-d142288518d3")
 	)
 	(wire
 		(pts
@@ -1780,16 +1784,6 @@
 			(type default)
 		)
 		(uuid "7fc5c46a-8b4f-43ec-b569-eb2f31141af5")
-	)
-	(wire
-		(pts
-			(xy 168.91 92.71) (xy 172.72 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "874be2e6-f069-450f-ac78-77754729fb6e")
 	)
 	(wire
 		(pts
@@ -1873,7 +1867,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 105.41) (xy 105.41 106.8275)
+			(xy 101.6 105.41) (xy 101.6 106.8275)
 		)
 		(stroke
 			(width 0)
@@ -1923,7 +1917,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 92.71) (xy 109.22 92.71)
+			(xy 101.6 92.71) (xy 109.22 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1943,7 +1937,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 106.8275) (xy 108.7291 106.8275)
+			(xy 101.6 106.8275) (xy 108.7291 106.8275)
 		)
 		(stroke
 			(width 0)
@@ -1980,6 +1974,16 @@
 			(type default)
 		)
 		(uuid "ed00394c-cd55-46ed-9463-7ab250f26833")
+	)
+	(label "GRD"
+		(at 152.4 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "26a2d5d9-9965-4fbb-9e9b-f6db322f6e59")
 	)
 	(label "Tip"
 		(at 162.56 85.09 0)
@@ -2227,6 +2231,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+15V")
+		(at 176.53 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2e0ed9a6-3fd9-4c8e-8ecd-dc3e20eba970")
+		(property "Reference" "#PWR04"
+			(at 176.53 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+15V"
+			(at 172.72 90.932 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 176.53 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 176.53 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+15V\""
+			(at 176.53 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cb8f3d6e-a0e9-4295-881b-f026118376ed")
+		)
+		(instances
+			(project "Tunnleing_Amp"
+				(path "/23381290-b2fe-475e-8adb-ba03872d8d98"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 108.7291 110.49 0)
 		(unit 1)
@@ -2351,6 +2420,127 @@
 			(project ""
 				(path "/23381290-b2fe-475e-8adb-ba03872d8d98"
 					(reference "#FLG01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "293D475X9035C2TE3:293D475X9035C2TE3")
+		(at 101.6 105.41 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "41bdad2c-c84a-4170-ae6f-445c69703914")
+		(property "Reference" "C1"
+			(at 96.774 100.076 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7uF"
+			(at 98.806 96.266 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "293D475X9035C2TE3:CAPPM6032X280N"
+			(at 197.79 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/40002/293d.pdf"
+			(at 297.79 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Solid Tantalum Surface Mount Chip Capacitors TANTAMOUNT(TM), Molded Case, Standard Industrial Grade"
+			(at 101.6 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "2.8"
+			(at 497.79 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "74-293D475X9035C2TE3"
+			(at 597.79 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Sprague/293D475X9035C2TE3?qs=L4BSZja3YaK5uiX7PSIEuA%3D%3D"
+			(at 697.79 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Vishay"
+			(at 797.79 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "293D475X9035C2TE3"
+			(at 897.79 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f19cb378-a1ce-4cb0-b60c-d0619078f6ed")
+		)
+		(pin "2"
+			(uuid "40556e81-e4d5-4990-bd41-f8cbfb0d98ea")
+		)
+		(instances
+			(project "Tunnleing_Amp"
+				(path "/23381290-b2fe-475e-8adb-ba03872d8d98"
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -2565,54 +2755,16 @@
 		)
 	)
 	(symbol
-		(lib_id "293D475X9035C2TE3:293D475X9035C2TE3")
-		(at 105.41 92.71 270)
+		(lib_id "power:-15V")
+		(at 111.76 92.71 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "71e63d66-222f-47cb-a29a-d4ac9c99008d")
-		(property "Reference" "C5"
-			(at 99.06 99.314 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "4.7uF"
-			(at 98.044 102.616 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "293D475X9035C2TE3:CAPPM6032X280N"
-			(at 9.22 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.vishay.com/docs/40002/293d.pdf"
-			(at -90.78 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "Solid Tantalum Surface Mount Chip Capacitors TANTAMOUNT(TM), Molded Case, Standard Industrial Grade"
-			(at 105.41 92.71 0)
+		(uuid "65df21ab-8fee-4975-9238-e201e4233897")
+		(property "Reference" "#PWR02"
+			(at 111.76 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2620,66 +2772,48 @@
 				(hide yes)
 			)
 		)
-		(property "Height" "2.8"
-			(at -290.78 101.6 0)
+		(property "Value" "-15V"
+			(at 115.316 90.678 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
+			)
+		)
+		(property "Footprint" ""
+			(at 111.76 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "74-293D475X9035C2TE3"
-			(at -390.78 101.6 0)
+		(property "Datasheet" ""
+			(at 111.76 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Sprague/293D475X9035C2TE3?qs=L4BSZja3YaK5uiX7PSIEuA%3D%3D"
-			(at -490.78 101.6 0)
+		(property "Description" "Power symbol creates a global label with name \"-15V\""
+			(at 111.76 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Vishay"
-			(at -590.78 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "293D475X9035C2TE3"
-			(at -690.78 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
 				(hide yes)
 			)
 		)
 		(pin "1"
-			(uuid "7a575a33-56b9-4535-b042-aa98bbf165f7")
-		)
-		(pin "2"
-			(uuid "47517058-b1cf-479d-bd79-96f497988435")
+			(uuid "6f0cbd3e-a3b9-45c4-9e8f-d90a41f49341")
 		)
 		(instances
-			(project ""
+			(project "Tunnleing_Amp"
 				(path "/23381290-b2fe-475e-8adb-ba03872d8d98"
-					(reference "C5")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -3030,137 +3164,6 @@
 			(project "Tunnleing_Amp"
 				(path "/23381290-b2fe-475e-8adb-ba03872d8d98"
 					(reference "#FLG02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:-15V")
-		(at 172.72 92.71 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8321f3ae-23e2-404b-8ce5-4528e076bd2d")
-		(property "Reference" "#PWR02"
-			(at 172.72 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "-15V"
-			(at 176.276 90.678 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 172.72 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"-15V\""
-			(at 172.72 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d01c04ae-ae59-4298-91ad-fa043eda5565")
-		)
-		(instances
-			(project "Tunnleing_Amp"
-				(path "/23381290-b2fe-475e-8adb-ba03872d8d98"
-					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 152.4 74.93 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "86b1d5d3-e526-4492-9e62-3a56a301c6eb")
-		(property "Reference" "#PWR08"
-			(at 152.4 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 152.4 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 152.4 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 152.4 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 152.4 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "54b3d423-fda2-4d80-a268-e9bc5eee1049")
-		)
-		(instances
-			(project "Tunnleing_Amp"
-				(path "/23381290-b2fe-475e-8adb-ba03872d8d98"
-					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -3610,71 +3613,6 @@
 			(project "Tunnleing_Amp"
 				(path "/23381290-b2fe-475e-8adb-ba03872d8d98"
 					(reference "#FLG03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+15V")
-		(at 105.41 92.71 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ff2e49bd-126a-4de7-bbec-46a0a8c970b4")
-		(property "Reference" "#PWR04"
-			(at 105.41 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+15V"
-			(at 101.6 90.932 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 105.41 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 105.41 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+15V\""
-			(at 105.41 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7e9a23f5-8c30-413e-8e2f-683d1cc70426")
-		)
-		(instances
-			(project "Tunnleing_Amp"
-				(path "/23381290-b2fe-475e-8adb-ba03872d8d98"
-					(reference "#PWR04")
 					(unit 1)
 				)
 			)
