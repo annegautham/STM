@@ -575,7 +575,7 @@
       "plot": "Gerbers",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Power_SupplyDes.step",
       "svg": "",
       "vrml": ""
     },
