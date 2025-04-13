@@ -1175,9 +1175,45 @@
 			(embedded_fonts no)
 		)
 	)
+	(junction
+		(at 72.39 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c99301a3-0e4e-4201-93ba-b235b489892e")
+	)
 	(no_connect
 		(at 133.35 91.44)
 		(uuid "53e474a7-98ab-41f7-83e8-ccae6be68683")
+	)
+	(wire
+		(pts
+			(xy 74.93 50.8) (xy 77.47 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "070a87a4-7001-48d0-84dc-ee5693b99945")
+	)
+	(wire
+		(pts
+			(xy 74.93 55.88) (xy 77.47 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e0e42ed-a607-4cec-8f5b-427ddb6b3197")
+	)
+	(wire
+		(pts
+			(xy 72.39 83.82) (xy 77.47 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37deecba-c58d-40f8-a533-5cdc12923773")
 	)
 	(wire
 		(pts
@@ -1188,6 +1224,16 @@
 			(type default)
 		)
 		(uuid "3acf37b8-3f13-4047-8823-c150b28724ca")
+	)
+	(wire
+		(pts
+			(xy 74.93 53.34) (xy 77.47 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4367beca-e636-4b03-8971-169d2000c262")
 	)
 	(wire
 		(pts
@@ -1211,6 +1257,26 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 43.18) (xy 77.47 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65bb75e3-0f27-49bb-a638-a00b041804b2")
+	)
+	(wire
+		(pts
+			(xy 72.39 83.82) (xy 72.39 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68c564b4-7b18-4017-b376-1c894ee5b4df")
+	)
+	(wire
+		(pts
 			(xy 74.93 96.52) (xy 77.47 96.52)
 		)
 		(stroke
@@ -1221,7 +1287,27 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 83.82) (xy 77.47 83.82)
+			(xy 71.12 86.36) (xy 72.39 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71a93c4e-fde4-4271-b90d-8ea01b882507")
+	)
+	(wire
+		(pts
+			(xy 74.93 68.58) (xy 77.47 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "749c2494-7d41-4e67-b3c1-a45ccfff10ab")
+	)
+	(wire
+		(pts
+			(xy 71.12 83.82) (xy 72.39 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1299,6 +1385,39 @@
 		)
 		(uuid "f21ec7cc-4c84-4643-8e7c-f66fe669e58f")
 	)
+	(hierarchical_label "BUSY_ADC"
+		(shape input)
+		(at 74.93 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0c75a8cd-aa8d-4153-9b31-4a08e5e02266")
+	)
+	(hierarchical_label "LDAC_DAC"
+		(shape input)
+		(at 74.93 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "13223bcf-a834-42d4-bac1-3a81f5e71c7a")
+	)
+	(hierarchical_label "SCK_ADC"
+		(shape input)
+		(at 71.12 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "19a9eced-1f45-40bb-bc60-13cf2ad4b920")
+	)
 	(hierarchical_label "MOSI_DAC"
 		(shape input)
 		(at 74.93 66.04 180)
@@ -1312,7 +1431,7 @@
 	)
 	(hierarchical_label "BIAS_MOD_EN"
 		(shape input)
-		(at 45.72 81.28 180)
+		(at 74.93 43.18 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1320,6 +1439,17 @@
 			(justify right)
 		)
 		(uuid "46d436a4-3ab1-4a12-a9fc-ea10c7769b80")
+	)
+	(hierarchical_label "CS_ADC"
+		(shape input)
+		(at 74.93 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "479c6546-ffee-40c1-9323-61aae70020a7")
 	)
 	(hierarchical_label "CS_DAC"
 		(shape input)
@@ -1343,17 +1473,6 @@
 		)
 		(uuid "5d962208-07b6-4f62-adf8-ec025d9a61d7")
 	)
-	(hierarchical_label "BIAS_MOD"
-		(shape input)
-		(at 45.72 76.2 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6ffce788-09c5-4e1c-8732-c14e19de9df9")
-	)
 	(hierarchical_label "PS_Temp_SDA"
 		(shape input)
 		(at 74.93 96.52 180)
@@ -1367,7 +1486,7 @@
 	)
 	(hierarchical_label "SCK_DAC"
 		(shape input)
-		(at 74.93 83.82 180)
+		(at 71.12 83.82 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1375,6 +1494,17 @@
 			(justify right)
 		)
 		(uuid "92fdb7f5-2ec9-47f9-bb68-35b7e3582cd0")
+	)
+	(hierarchical_label "CNV_ADC"
+		(shape input)
+		(at 74.93 53.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ad487bcf-e286-4b05-9004-b87eb1e9514f")
 	)
 	(hierarchical_label "PS_Temp_SCL"
 		(shape input)
@@ -1387,16 +1517,16 @@
 		)
 		(uuid "b90e1656-cf50-4de5-868b-cd14eecc601e")
 	)
-	(hierarchical_label "LDAC_DAC"
+	(hierarchical_label "MISO_ADC"
 		(shape input)
-		(at 74.93 60.96 180)
+		(at 74.93 68.58 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "bedb5aae-258e-4944-8cb6-bf50f7c8eda1")
+		(uuid "eaa56c5f-4946-412d-8158-fc216d33bfa9")
 	)
 	(symbol
 		(lib_id "power:GND")
