@@ -1740,6 +1740,145 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C_Small"
 			(pin_numbers
 				(hide yes)
@@ -1989,6 +2128,159 @@
 				(pin passive line
 					(at 0 -2.54 90)
 					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mainboard-rescue:CP_Small-Device"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.254 1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Device_CP_Small"
+				(at 0.254 -2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "CP_Small-Device_0_1"
+				(rectangle
+					(start -1.524 0.6858)
+					(end 1.524 0.3048)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.524 -0.3048)
+					(end 1.524 -0.6858)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.524) (xy -0.762 1.524)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.016 1.27) (xy -1.016 1.778)
+					)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "CP_Small-Device_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 1.8542)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 1.8542)
 					(name "~"
 						(effects
 							(font
@@ -2727,6 +3019,12 @@
 		(uuid "00fd3389-a99d-4540-88bd-5f0d57702831")
 	)
 	(junction
+		(at 106.68 165.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0645f1de-f94a-4006-8d61-61e63cf819b5")
+	)
+	(junction
 		(at 166.37 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2769,6 +3067,12 @@
 		(uuid "2ade40fd-6f33-44db-a986-f9b37cf3fca2")
 	)
 	(junction
+		(at 134.62 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2d55b78e-fab3-446a-a512-89a63792a324")
+	)
+	(junction
 		(at 147.32 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2785,6 +3089,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "36f8d13b-27d6-4188-b2e6-0960fc1a7209")
+	)
+	(junction
+		(at 146.05 165.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3730fc51-b1f5-4fb6-a356-2a3b98f25379")
 	)
 	(junction
 		(at 179.07 62.23)
@@ -2823,10 +3133,22 @@
 		(uuid "4e4ec26c-a471-48f9-80f9-0c8d8be708c2")
 	)
 	(junction
+		(at 119.38 154.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "57816bb4-7959-4f49-9b39-254365535d0c")
+	)
+	(junction
 		(at 147.32 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "607ff11a-b1e8-4004-a608-8462cd7fd433")
+	)
+	(junction
+		(at 106.68 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62f2c5e1-4d83-43e6-8207-670b6eeb3342")
 	)
 	(junction
 		(at 166.37 102.87)
@@ -2841,6 +3163,12 @@
 		(uuid "68fb87a3-042d-4acc-b5c0-1d327dc1a995")
 	)
 	(junction
+		(at 134.62 165.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6bbf86b6-781f-4e37-97f7-877c6495bb07")
+	)
+	(junction
 		(at 198.12 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2851,6 +3179,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "84dacf8f-a614-44b1-87f1-127b34c5e670")
+	)
+	(junction
+		(at 119.38 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85c809b9-5d6c-4db0-80f1-a641ab8845d2")
+	)
+	(junction
+		(at 134.62 154.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9889f85e-ffa8-40d7-8fcc-d5b382e642cc")
 	)
 	(junction
 		(at 195.58 142.24)
@@ -2871,22 +3211,28 @@
 		(uuid "a048fde9-f0a2-4dd7-b0c2-16e53830e320")
 	)
 	(junction
+		(at 22.86 31.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a194b68c-5025-4001-9ad2-824ea3e5a918")
+	)
+	(junction
 		(at 195.58 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a9bb5823-c749-4250-b71f-04715dc05428")
 	)
 	(junction
-		(at 22.86 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b5bb0566-a464-45e4-93e1-d2d0f29000c5")
-	)
-	(junction
 		(at 198.12 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b8ad0f65-22e8-43d0-9c86-31ed64f47c8e")
+	)
+	(junction
+		(at 22.86 26.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b8e78197-03c1-45ce-bdbc-3cf489302bf6")
 	)
 	(junction
 		(at 179.07 96.52)
@@ -2919,6 +3265,12 @@
 		(uuid "ce0f92be-964d-4851-a8a6-42230bf0f91a")
 	)
 	(junction
+		(at 106.68 154.94)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ce57d497-744c-48f7-b559-8463bd350adb")
+	)
+	(junction
 		(at 213.36 144.78)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2931,10 +3283,10 @@
 		(uuid "d0db8a87-d581-4987-89e5-1621b8e5e8b3")
 	)
 	(junction
-		(at 22.86 26.67)
+		(at 119.38 165.1)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "d1c86d0a-1af8-464b-9d9e-997689fab1b4")
+		(uuid "d43e3565-6c6a-43f8-93d2-cf766f18e010")
 	)
 	(junction
 		(at 30.48 114.3)
@@ -3056,6 +3408,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 154.94) (xy 134.62 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05f76068-7121-4cb7-b43c-0ce13725742a")
+	)
+	(wire
+		(pts
 			(xy 198.12 102.87) (xy 200.66 102.87)
 		)
 		(stroke
@@ -3063,6 +3425,16 @@
 			(type default)
 		)
 		(uuid "06650844-20ec-482d-9195-42a93d70484e")
+	)
+	(wire
+		(pts
+			(xy 106.68 175.26) (xy 106.68 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "069ee67a-bf0d-4094-8680-e785d66a769a")
 	)
 	(wire
 		(pts
@@ -3306,6 +3678,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 165.1) (xy 106.68 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "276f033b-efb5-4cbf-8bd6-a28375720f63")
+	)
+	(wire
+		(pts
 			(xy 176.53 153.67) (xy 179.07 153.67)
 		)
 		(stroke
@@ -3326,6 +3708,26 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 156.21) (xy 106.68 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30ad6466-f590-4ced-a032-78d7a28b70b6")
+	)
+	(wire
+		(pts
+			(xy 134.62 154.94) (xy 134.62 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30c087a4-591a-4ee5-bbe0-ea8c84102c2e")
+	)
+	(wire
+		(pts
 			(xy 265.43 156.21) (xy 265.43 154.94)
 		)
 		(stroke
@@ -3343,6 +3745,16 @@
 			(type default)
 		)
 		(uuid "32776ec5-9779-4fa4-b511-217d4f8ae320")
+	)
+	(wire
+		(pts
+			(xy 100.33 154.94) (xy 106.68 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32d3203d-b350-4946-812c-7bc891403cd6")
 	)
 	(wire
 		(pts
@@ -3376,6 +3788,16 @@
 	)
 	(wire
 		(pts
+			(xy 146.05 165.1) (xy 146.05 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37338395-665d-470e-aedc-2734a2f72306")
+	)
+	(wire
+		(pts
 			(xy 213.36 135.89) (xy 213.36 144.78)
 		)
 		(stroke
@@ -3393,6 +3815,16 @@
 			(type default)
 		)
 		(uuid "3dc9c9c1-2695-4289-9bda-c52c5878b5f6")
+	)
+	(wire
+		(pts
+			(xy 134.62 175.26) (xy 146.05 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e0186a0-ddf1-46f0-b699-547cde9db542")
 	)
 	(wire
 		(pts
@@ -3536,6 +3968,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 156.21) (xy 119.38 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f7152b7-a4dc-4027-a36f-954aabb8a2f7")
+	)
+	(wire
+		(pts
 			(xy 215.9 54.61) (xy 215.9 62.23)
 		)
 		(stroke
@@ -3546,7 +3988,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 144.78) (xy 215.9 144.78)
+			(xy 213.36 144.78) (xy 222.25 144.78)
 		)
 		(stroke
 			(width 0)
@@ -3676,6 +4118,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 175.26) (xy 106.68 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69c526f1-9bcd-4246-97ee-d373a4277901")
+	)
+	(wire
+		(pts
 			(xy 147.32 139.7) (xy 151.13 139.7)
 		)
 		(stroke
@@ -3756,6 +4208,16 @@
 	)
 	(wire
 		(pts
+			(xy 146.05 163.83) (xy 146.05 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76bb92c2-31db-445f-b29e-175d32ca3fdb")
+	)
+	(wire
+		(pts
 			(xy 41.91 109.22) (xy 44.45 109.22)
 		)
 		(stroke
@@ -3763,6 +4225,16 @@
 			(type default)
 		)
 		(uuid "77a5b3e0-3212-4ea4-99be-50782a2c2369")
+	)
+	(wire
+		(pts
+			(xy 119.38 173.99) (xy 119.38 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "790f516c-4217-479d-b715-8ef5705d6058")
 	)
 	(wire
 		(pts
@@ -3803,6 +4275,16 @@
 			(type default)
 		)
 		(uuid "7bc35769-b3d2-4f78-beec-cab5ef115c35")
+	)
+	(wire
+		(pts
+			(xy 106.68 163.83) (xy 106.68 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c3b398b-344d-41d8-81f1-48a4a804fce6")
 	)
 	(wire
 		(pts
@@ -3853,6 +4335,16 @@
 			(type default)
 		)
 		(uuid "86262023-c3e9-4b52-a02c-27ae7b80e4e3")
+	)
+	(wire
+		(pts
+			(xy 119.38 165.1) (xy 134.62 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88e30e97-7f94-4f1e-9da7-7e97449d01ab")
 	)
 	(wire
 		(pts
@@ -3956,6 +4448,16 @@
 	)
 	(wire
 		(pts
+			(xy 96.52 165.1) (xy 106.68 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "941b4234-6701-40cd-a13e-e0a6b83cead2")
+	)
+	(wire
+		(pts
 			(xy 41.91 132.08) (xy 44.45 132.08)
 		)
 		(stroke
@@ -4033,6 +4535,26 @@
 			(type default)
 		)
 		(uuid "9fd80e59-240c-4a36-90da-32f837e7b2df")
+	)
+	(wire
+		(pts
+			(xy 134.62 165.1) (xy 134.62 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0a39656-8fd8-4e0c-97b2-b299067fbc78")
+	)
+	(wire
+		(pts
+			(xy 146.05 175.26) (xy 146.05 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1e48d35-7f21-4ae1-a552-2f9859ab47a0")
 	)
 	(wire
 		(pts
@@ -4156,6 +4678,26 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 166.37) (xy 119.38 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8a44d1f-e9c5-403d-97b6-64ed7a849c73")
+	)
+	(wire
+		(pts
+			(xy 134.62 173.99) (xy 134.62 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8f2de7e-9e14-4c80-9d30-90a038f8a4a4")
+	)
+	(wire
+		(pts
 			(xy 139.7 33.02) (xy 148.59 33.02)
 		)
 		(stroke
@@ -4256,6 +4798,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 163.83) (xy 134.62 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c155d844-2404-45bc-9c01-fad8ceb19149")
+	)
+	(wire
+		(pts
 			(xy 77.47 121.92) (xy 80.01 121.92)
 		)
 		(stroke
@@ -4263,6 +4815,16 @@
 			(type default)
 		)
 		(uuid "c192e54e-fb40-42cd-9783-2bc370d6261a")
+	)
+	(wire
+		(pts
+			(xy 146.05 154.94) (xy 146.05 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3c95ba4-60ee-4ff1-8468-b7db193807e7")
 	)
 	(wire
 		(pts
@@ -4456,6 +5018,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 165.1) (xy 119.38 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de49bf4a-55c9-4b53-a539-9d1f2c6015f7")
+	)
+	(wire
+		(pts
 			(xy 138.43 139.7) (xy 147.32 139.7)
 		)
 		(stroke
@@ -4473,6 +5045,16 @@
 			(type default)
 		)
 		(uuid "e04e910f-8f13-4f34-80aa-2084c4a534d0")
+	)
+	(wire
+		(pts
+			(xy 106.68 154.94) (xy 119.38 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e05772d4-5f33-4375-82be-8e60c5d8213f")
 	)
 	(wire
 		(pts
@@ -4513,6 +5095,16 @@
 			(type default)
 		)
 		(uuid "e206146e-d3de-4386-9c1d-e9e93ffcfa55")
+	)
+	(wire
+		(pts
+			(xy 119.38 165.1) (xy 119.38 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4119c42-541c-4804-b4cd-560adf312580")
 	)
 	(wire
 		(pts
@@ -4586,6 +5178,26 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 175.26) (xy 134.62 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebc20463-0bf2-455e-b3bb-562993062a52")
+	)
+	(wire
+		(pts
+			(xy 134.62 154.94) (xy 146.05 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec8bca97-d94f-46f6-a1b5-896e2dc4612f")
+	)
+	(wire
+		(pts
 			(xy 77.47 114.3) (xy 81.28 114.3)
 		)
 		(stroke
@@ -4613,6 +5225,16 @@
 			(type default)
 		)
 		(uuid "f0e92341-30bb-460b-9214-fee63621bba3")
+	)
+	(wire
+		(pts
+			(xy 106.68 175.26) (xy 119.38 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f10b225a-bd25-4196-8cd2-faf544fc43aa")
 	)
 	(wire
 		(pts
@@ -4683,6 +5305,16 @@
 			(type default)
 		)
 		(uuid "fc38ffda-6fe4-4b63-80fa-bac57d5c6bf2")
+	)
+	(wire
+		(pts
+			(xy 134.62 165.1) (xy 146.05 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc5ec9d3-2128-49d0-9039-dfdfa8f34b6d")
 	)
 	(wire
 		(pts
@@ -5053,7 +5685,7 @@
 	)
 	(hierarchical_label "BIAS"
 		(shape input)
-		(at 215.9 144.78 0)
+		(at 222.25 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5111,7 +5743,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 208.28 29.21 0)
 			(effects
 				(font
@@ -5130,6 +5762,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 208.28 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "667-ERA-6AED302V"
 			(at 208.28 29.21 0)
 			(effects
 				(font
@@ -5245,7 +5886,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 204.47 135.89 0)
 			(effects
 				(font
@@ -5264,6 +5905,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 204.47 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "667-ERA-6AED302V"
 			(at 204.47 135.89 0)
 			(effects
 				(font
@@ -5314,7 +5964,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 190.5 102.87 0)
 			(effects
 				(font
@@ -5333,6 +5983,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 190.5 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "755-ESR10EZPF1501"
 			(at 190.5 102.87 0)
 			(effects
 				(font
@@ -5384,7 +6043,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 146.05 96.52 0)
 			(effects
 				(font
@@ -5403,6 +6062,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 146.05 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805C332KCR"
 			(at 146.05 96.52 0)
 			(effects
 				(font
@@ -5479,6 +6147,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "584-ADG419BRZ-R"
+			(at 248.92 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "4"
@@ -5606,7 +6282,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 190.5 62.23 0)
 			(effects
 				(font
@@ -5633,6 +6309,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "667-ERA-6AED302V"
+			(at 190.5 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "18786cf8-ad8f-403d-ad85-e68d03558396")
 		)
@@ -5643,6 +6328,92 @@
 			(project "Mainboard"
 				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
 					(reference "R52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 146.05 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1d3c1381-d88a-43a2-b2f7-5bee1e33ab2b")
+		(property "Reference" "C47"
+			(at 148.59 169.164 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 153.162 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 147.0152 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 146.05 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 146.05 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805S104K1RACAUT"
+			(at 146.05 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9aa9a590-6512-4199-8c56-dae196096453")
+		)
+		(pin "2"
+			(uuid "e7bae8df-50af-44e1-b4b5-9aa88e980be9")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "C47")
 					(unit 1)
 				)
 			)
@@ -5674,7 +6445,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 157.48 105.41 0)
 			(effects
 				(font
@@ -5693,6 +6464,15 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 158.75 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
 			(at 158.75 102.87 0)
 			(effects
 				(font
@@ -5777,7 +6557,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 207.01 54.61 0)
 			(effects
 				(font
@@ -5796,6 +6576,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 207.01 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805C472J3GAUTO"
 			(at 207.01 54.61 0)
 			(effects
 				(font
@@ -5913,7 +6702,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 109.22 78.74 0)
 			(effects
 				(font
@@ -5932,6 +6721,15 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 110.49 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
 			(at 110.49 81.28 0)
 			(effects
 				(font
@@ -6187,35 +6985,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
-		(at 22.86 29.21 0)
+		(lib_id "power:-15V")
+		(at 101.6 175.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "300de215-c00d-4007-8ac5-6f8f83adcae1")
-		(property "Reference" "C1"
-			(at 25.4 27.9462 0)
+		(uuid "31c791b7-63e3-4f23-a741-ba25aedf3523")
+		(property "Reference" "#PWR092"
+			(at 101.6 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Value" "10u"
-			(at 25.4 30.4862 0)
+		(property "Value" "-15V"
+			(at 101.346 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 22.86 29.21 0)
+			(at 101.6 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6223,8 +7019,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 22.86 29.21 0)
+		(property "Datasheet" ""
+			(at 101.6 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6232,8 +7028,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 22.86 29.21 0)
+		(property "Description" "Power symbol creates a global label with name \"-15V\""
+			(at 101.6 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6242,15 +7038,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "b229fad9-7898-4b2b-abdc-29d3bdf6c749")
-		)
-		(pin "2"
-			(uuid "1da7bdcc-fa79-40b8-881f-990562f8ff54")
+			(uuid "5b039d70-4443-40d6-ae73-717dd5f5b404")
 		)
 		(instances
-			(project ""
+			(project "Mainboard"
 				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
-					(reference "C1")
+					(reference "#PWR092")
 					(unit 1)
 				)
 			)
@@ -6283,7 +7076,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 190.5 96.52 0)
 			(effects
 				(font
@@ -6302,6 +7095,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 190.5 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "667-ERA-6AED302V"
 			(at 190.5 96.52 0)
 			(effects
 				(font
@@ -6417,7 +7219,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 229.87 130.81 0)
 			(effects
 				(font
@@ -6436,6 +7238,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 229.87 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "667-ERA-6AED302V"
 			(at 229.87 130.81 0)
 			(effects
 				(font
@@ -6486,7 +7297,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 26.67 115.57 0)
 			(effects
 				(font
@@ -6511,6 +7322,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "755-ESR10EZPD1002"
+			(at 26.67 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -6749,7 +7568,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 204.47 147.32 0)
 			(effects
 				(font
@@ -6774,6 +7593,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
+			(at 205.74 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -6991,7 +7818,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 207.01 107.95 0)
 			(effects
 				(font
@@ -7010,6 +7837,15 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 208.28 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
 			(at 208.28 105.41 0)
 			(effects
 				(font
@@ -7097,7 +7933,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.29x3mm_ThermalVias"
 			(at 25.4 55.88 0)
 			(effects
 				(font
@@ -7116,6 +7952,15 @@
 			)
 		)
 		(property "Description" "Dual Low-Noise JFET-Input Operational Amplifiers, DIP-8/SOIC-8"
+			(at 25.4 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL072BIDT"
 			(at 25.4 55.88 0)
 			(effects
 				(font
@@ -7183,7 +8028,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 158.75 71.12 0)
 			(effects
 				(font
@@ -7202,6 +8047,15 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 160.02 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
 			(at 160.02 68.58 0)
 			(effects
 				(font
@@ -7257,6 +8111,92 @@
 				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
 					(reference "U6")
 					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 134.62 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5a05eb46-bc1f-419b-a8ee-63fc03c1f87f")
+		(property "Reference" "C44"
+			(at 127.254 156.972 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 131.826 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 135.5852 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 134.62 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 134.62 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805S104K1RACAUT"
+			(at 134.62 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7e5666f3-52d6-4738-b5fe-c4e7698966d4")
+		)
+		(pin "2"
+			(uuid "aa4db4c0-6281-4e42-a788-624653b0bc34")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "C44")
+					(unit 1)
 				)
 			)
 		)
@@ -7392,6 +8332,187 @@
 		)
 	)
 	(symbol
+		(lib_id "Mainboard-rescue:CP_Small-Device")
+		(at 44.45 60.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5d906429-dc49-4064-95e3-bd7cbcf20869")
+		(property "Reference" "C85"
+			(at 46.6852 59.7916 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100u"
+			(at 46.6852 62.103 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
+			(at 44.45 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 44.45 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Digikey" ""
+			(at 44.45 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Reichelt" "RAD FR 330/25"
+			(at 44.45 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-ESW107M016AE3EA"
+			(at 44.45 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "16a83c7c-c19f-4049-94b9-4534dfb69cb1")
+		)
+		(pin "2"
+			(uuid "d6c84b1c-8683-4103-a8c6-aee8c5404837")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "C85")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 106.68 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e5a8626-fcdc-4134-9abe-320a935b8d0f")
+		(property "Reference" "C40"
+			(at 100.33 157.226 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 103.886 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 107.6452 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 106.68 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 106.68 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 106.68 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805S104K1RACAUT"
+			(at 106.68 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9cfbb784-eec2-4935-83cc-014a618eda9c")
+		)
+		(pin "2"
+			(uuid "dcb40c83-7107-4c79-8e9b-50f3f5553360")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "C40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Operational:TL074")
 		(at 158.75 142.24 0)
 		(mirror x)
@@ -7417,7 +8538,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 157.48 144.78 0)
 			(effects
 				(font
@@ -7436,6 +8557,15 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 158.75 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
 			(at 158.75 142.24 0)
 			(effects
 				(font
@@ -7521,7 +8651,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 207.01 73.66 0)
 			(effects
 				(font
@@ -7540,6 +8670,15 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 208.28 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
 			(at 208.28 71.12 0)
 			(effects
 				(font
@@ -7625,7 +8764,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 160.02 38.1 0)
 			(effects
 				(font
@@ -7644,6 +8783,15 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 161.29 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
 			(at 161.29 35.56 0)
 			(effects
 				(font
@@ -7731,7 +8879,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 147.32 135.89 0)
 			(effects
 				(font
@@ -7750,6 +8898,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 147.32 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805C332KCR"
 			(at 147.32 135.89 0)
 			(effects
 				(font
@@ -7833,6 +8990,187 @@
 			(project "Mainboard"
 				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
 					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mainboard-rescue:CP_Small-Device")
+		(at 22.86 29.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "63084318-3e5f-4770-92d9-e1e6c213118d")
+		(property "Reference" "C84"
+			(at 25.0952 28.0416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10u"
+			(at 25.0952 30.353 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm"
+			(at 22.86 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 22.86 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 22.86 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Digikey" ""
+			(at 22.86 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Reichelt" "RAD FR 330/25"
+			(at 22.86 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "710-860020472003 "
+			(at 22.86 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fc8b1ddc-6349-4a5d-a533-d8b732efdf6e")
+		)
+		(pin "1"
+			(uuid "e9e30cbd-ac29-410a-b09f-b63839a9e690")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "C84")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 106.68 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6f1d0359-5155-4244-9fa6-2ef806a84b76")
+		(property "Reference" "C41"
+			(at 109.22 169.164 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 113.792 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 107.6452 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 106.68 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 106.68 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 106.68 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805S104K1RACAUT"
+			(at 106.68 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "59b656ff-1394-4f93-ab04-5babbdf8baed")
+		)
+		(pin "2"
+			(uuid "922cfdce-a028-44b6-9692-6483d65ff8e4")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "C41")
 					(unit 1)
 				)
 			)
@@ -7931,7 +9269,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 147.32 62.23 0)
 			(effects
 				(font
@@ -7950,6 +9288,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 147.32 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805C332KCR"
 			(at 147.32 62.23 0)
 			(effects
 				(font
@@ -8223,6 +9570,14 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "584-ADG419BRZ-R"
+			(at 240.03 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "4"
 			(uuid "9879e128-6287-4859-b128-11ecfabd3dc8")
 		)
@@ -8257,17 +9612,16 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Small")
-		(at 44.45 60.96 0)
+		(lib_id "Device:C")
+		(at 146.05 160.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7b0ac8de-8cdd-49ef-acb7-b8318269857d")
-		(property "Reference" "C9"
-			(at 46.99 59.6962 0)
+		(uuid "7c508b39-8281-4017-bebb-a2c552793c03")
+		(property "Reference" "C46"
+			(at 148.59 159.004 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8275,17 +9629,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100u"
-			(at 46.99 62.2362 0)
+		(property "Value" "100n"
+			(at 153.162 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" ""
-			(at 44.45 60.96 0)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 147.0152 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8294,7 +9648,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 44.45 60.96 0)
+			(at 146.05 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8302,8 +9656,25 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 44.45 60.96 0)
+		(property "Description" ""
+			(at 146.05 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 146.05 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805S104K1RACAUT"
+			(at 146.05 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8312,15 +9683,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "28097ebb-010f-4bee-b993-d5e820d74929")
+			(uuid "d698acd5-8306-4bbf-8c50-3e2b8d0a2767")
 		)
 		(pin "2"
-			(uuid "ecccfed5-537b-4e61-a819-f07339b5e306")
+			(uuid "2bdb7d5e-0d60-4392-a00f-c82c487c43c9")
 		)
 		(instances
 			(project "Mainboard"
 				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
-					(reference "C9")
+					(reference "C46")
 					(unit 1)
 				)
 			)
@@ -8354,7 +9725,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 119.38 78.74 0)
 			(effects
 				(font
@@ -8373,6 +9744,15 @@
 			)
 		)
 		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 120.65 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
 			(at 120.65 81.28 0)
 			(effects
 				(font
@@ -8460,7 +9840,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 148.59 29.21 0)
 			(effects
 				(font
@@ -8479,6 +9859,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 148.59 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805C332KCR"
 			(at 148.59 29.21 0)
 			(effects
 				(font
@@ -8528,7 +9917,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.29x3mm_ThermalVias"
 			(at 58.42 54.61 0)
 			(effects
 				(font
@@ -8553,6 +9942,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL072BIDT"
+			(at 58.42 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -8615,7 +10012,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 207.01 62.23 0)
 			(effects
 				(font
@@ -8634,6 +10031,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 207.01 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "667-ERA-6AED302V"
 			(at 207.01 62.23 0)
 			(effects
 				(font
@@ -8682,7 +10088,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 208.28 21.59 0)
 			(effects
 				(font
@@ -8709,6 +10115,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "80-C0805C472J3GAUTO"
+			(at 208.28 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a7886bc7-1579-4030-96f1-a54da7a6ef0c")
 		)
@@ -8719,6 +10134,71 @@
 			(project "Mainboard"
 				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
 					(reference "C24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+15V")
+		(at 100.33 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "970260b8-a208-4f8b-ac77-84b33ca1e123")
+		(property "Reference" "#PWR091"
+			(at 100.33 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+15V"
+			(at 100.076 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+15V\""
+			(at 100.33 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0210985f-a279-40d0-98b0-808b114f34cc")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "#PWR091")
 					(unit 1)
 				)
 			)
@@ -8946,7 +10426,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 207.01 40.64 0)
 			(effects
 				(font
@@ -8971,6 +10451,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL074IYDT"
+			(at 208.28 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
@@ -9051,7 +10539,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 190.5 29.21 0)
 			(effects
 				(font
@@ -9070,6 +10558,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 190.5 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "667-ERA-6AED302V"
 			(at 190.5 29.21 0)
 			(effects
 				(font
@@ -9118,7 +10615,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 204.47 125.73 0)
 			(effects
 				(font
@@ -9137,6 +10634,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 204.47 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805C472J3GAUTO"
 			(at 204.47 125.73 0)
 			(effects
 				(font
@@ -9187,7 +10693,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 186.69 135.89 0)
 			(effects
 				(font
@@ -9206,6 +10712,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 186.69 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "667-ERA-6AED302V"
 			(at 186.69 135.89 0)
 			(effects
 				(font
@@ -9321,7 +10836,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 190.5 35.56 0)
 			(effects
 				(font
@@ -9348,6 +10863,15 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser Part Number" "755-ESR10EZPF1501"
+			(at 190.5 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "95b74842-ae2b-49dc-8b21-ed171bb18e64")
 		)
@@ -9358,6 +10882,92 @@
 			(project "Mainboard"
 				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
 					(reference "R43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 134.62 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b2d8a40f-da59-4c8b-831b-9496e83a8bb8")
+		(property "Reference" "C45"
+			(at 137.16 169.164 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 141.732 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 135.5852 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 134.62 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 134.62 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805S104K1RACAUT"
+			(at 134.62 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8cc99962-ec5e-41a3-adc8-ea2e01b0075d")
+		)
+		(pin "2"
+			(uuid "20062229-6d5e-4316-a47a-d39369cacc10")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "C45")
 					(unit 1)
 				)
 			)
@@ -9390,7 +11000,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 190.5 142.24 0)
 			(effects
 				(font
@@ -9409,6 +11019,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 190.5 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "755-ESR10EZPF1501"
 			(at 190.5 142.24 0)
 			(effects
 				(font
@@ -9498,6 +11117,178 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 119.38 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bd9afe46-d6a3-47c0-bbdb-9aca0775cdae")
+		(property "Reference" "C42"
+			(at 112.014 156.464 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 116.586 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 120.3452 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 119.38 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 119.38 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 119.38 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805S104K1RACAUT"
+			(at 119.38 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f17ff47e-8b25-4d5b-a99d-3d229b37de4f")
+		)
+		(pin "2"
+			(uuid "eca1664e-c5fb-48ca-8d46-d785fa4539a4")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "C42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 119.38 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "be7e1f08-361e-4e17-9b46-9577f10151b8")
+		(property "Reference" "C43"
+			(at 121.92 169.164 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 126.492 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 120.3452 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 119.38 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 119.38 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 119.38 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805S104K1RACAUT"
+			(at 119.38 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b2cff647-fcc7-459a-a6f8-e8aa2dcda81b")
+		)
+		(pin "2"
+			(uuid "9a7f7b5b-c921-4b79-b920-e62f82d2b5ec")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "C43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 207.01 88.9 90)
 		(unit 1)
@@ -9522,7 +11313,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 207.01 88.9 0)
 			(effects
 				(font
@@ -9541,6 +11332,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 207.01 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805C472J3GAUTO"
 			(at 207.01 88.9 0)
 			(effects
 				(font
@@ -9789,7 +11589,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 207.01 96.52 0)
 			(effects
 				(font
@@ -9808,6 +11608,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 207.01 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "667-ERA-6AED302V"
 			(at 207.01 96.52 0)
 			(effects
 				(font
@@ -9990,7 +11799,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 82.55 26.67 0)
 			(effects
 				(font
@@ -10009,6 +11818,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 82.55 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "80-C0805C225K4R3123"
 			(at 82.55 26.67 0)
 			(effects
 				(font
@@ -10059,7 +11877,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 190.5 68.58 0)
 			(effects
 				(font
@@ -10078,6 +11896,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 190.5 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "755-ESR10EZPF1501"
 			(at 190.5 68.58 0)
 			(effects
 				(font
@@ -10232,6 +12059,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 96.52 165.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee29a152-6f41-456a-a223-c21e62d4de21")
+		(property "Reference" "#PWR090"
+			(at 96.52 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 96.774 169.164 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 96.52 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 96.52 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 96.52 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d71a9b0f-7af5-45ce-b5d6-8a0cb5e8632d")
+		)
+		(instances
+			(project "Mainboard"
+				(path "/6062de0a-19b5-4384-b464-187ca20917ea/bcd79c8e-2edf-4bd1-a4ed-948c9ff15630"
+					(reference "#PWR090")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+15V")
 		(at 22.86 26.67 0)
 		(unit 1)
@@ -10323,7 +12215,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 36.83 57.15 0)
 			(effects
 				(font
@@ -10342,6 +12234,15 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
+			(at 36.83 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "755-ESR10EZPJ102 "
 			(at 36.83 57.15 0)
 			(effects
 				(font
@@ -10391,7 +12292,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.29x3mm_ThermalVias"
 			(at 59.69 81.28 0)
 			(effects
 				(font
@@ -10416,6 +12317,14 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "511-TL072BIDT"
+			(at 59.69 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "2"
