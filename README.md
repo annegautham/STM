@@ -1,1 +1,1 @@
-![alt text](https://github.com/[annegautham]/[STM]/setup.png?raw=true)
+![alt text](https://github.com/annegautham/STM/blob/main/setup.png?raw=true)
