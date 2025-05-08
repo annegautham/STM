@@ -4212,6 +4212,26 @@
 		)
 		(embedded_fonts no)
 	)
+	(gr_line
+		(start 95.4 56.9)
+		(end 93.3 56.9)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "1273b895-8f0a-478c-b82f-2c6c4822032b")
+	)
+	(gr_line
+		(start 95.4 56.9)
+		(end 95.4 50.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "9da59d1a-0a81-431b-879d-b4b4fe6205b0")
+	)
 	(gr_rect
 		(start 91.6 48.1)
 		(end 111.6 68.1)
@@ -4313,14 +4333,14 @@
 		(style
 			(thickness 0.1)
 			(arrow_length 1.27)
-			(text_position_mode 0)
+			(text_position_mode 2)
 			(arrow_direction outward)
 			(extension_height 0.58642)
 			(extension_offset 0.5)
 			(keep_text_aligned yes)
 		)
 		(gr_text "20.0000 mm"
-			(at 116.65 58.1 90)
+			(at 117.4 58.275 90)
 			(layer "Dwgs.User")
 			(uuid "5f67fc25-9ac2-45a5-b832-4b0217dded24")
 			(effects
@@ -4349,14 +4369,14 @@
 		(style
 			(thickness 0.1)
 			(arrow_length 1.27)
-			(text_position_mode 0)
+			(text_position_mode 2)
 			(arrow_direction outward)
 			(extension_height 0.58642)
 			(extension_offset 0.5)
 			(keep_text_aligned yes)
 		)
 		(gr_text "2.9000 mm"
-			(at 93.05 76.75 0)
+			(at 91.6 70.65 0)
 			(layer "Dwgs.User")
 			(uuid "94324ca1-af42-44b4-b5e2-5cab9df34014")
 			(effects

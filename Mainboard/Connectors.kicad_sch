@@ -1075,7 +1075,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 137.16) (xy 95.25 137.16)
+			(xy 50.8 134.62) (xy 53.34 134.62)
 		)
 		(stroke
 			(width 0)
@@ -1175,7 +1175,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 149.86) (xy 95.25 149.86)
+			(xy 50.8 147.32) (xy 53.34 147.32)
 		)
 		(stroke
 			(width 0)
@@ -1215,7 +1215,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 139.7) (xy 95.25 139.7)
+			(xy 50.8 137.16) (xy 53.34 137.16)
 		)
 		(stroke
 			(width 0)
@@ -1345,7 +1345,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 132.08) (xy 95.25 132.08)
+			(xy 50.8 129.54) (xy 53.34 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1395,7 +1395,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 129.54) (xy 95.25 129.54)
+			(xy 50.8 127) (xy 53.34 127)
 		)
 		(stroke
 			(width 0)
@@ -1505,7 +1505,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 147.32) (xy 95.25 147.32)
+			(xy 52.07 144.78) (xy 53.34 144.78)
 		)
 		(stroke
 			(width 0)
@@ -1685,7 +1685,7 @@
 	)
 	(hierarchical_label "AIN-"
 		(shape input)
-		(at 92.71 139.7 180)
+		(at 50.8 137.16 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1773,7 +1773,7 @@
 	)
 	(hierarchical_label "IOUT-"
 		(shape input)
-		(at 92.71 132.08 180)
+		(at 50.8 129.54 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1839,7 +1839,7 @@
 	)
 	(hierarchical_label "IOUT+"
 		(shape input)
-		(at 92.71 129.54 180)
+		(at 50.8 127 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1850,7 +1850,7 @@
 	)
 	(hierarchical_label "AIN+"
 		(shape input)
-		(at 92.71 137.16 180)
+		(at 50.8 134.62 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1883,7 +1883,7 @@
 	)
 	(hierarchical_label "BIAS_MOD"
 		(shape input)
-		(at 92.71 147.32 180)
+		(at 52.07 144.78 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1927,7 +1927,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 92.71 149.86 0)
+		(at 50.8 147.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1935,7 +1935,7 @@
 		(dnp no)
 		(uuid "33bdfe33-bb4c-425b-8978-4ebb8b227ecc")
 		(property "Reference" "#PWR093"
-			(at 92.71 156.21 0)
+			(at 50.8 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1944,7 +1944,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 92.964 153.924 0)
+			(at 51.054 151.384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1952,7 +1952,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 149.86 0)
+			(at 50.8 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1961,7 +1961,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 149.86 0)
+			(at 50.8 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1970,7 +1970,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 92.71 149.86 0)
+			(at 50.8 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1992,7 +1992,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 100.33 132.08 180)
+		(at 58.42 129.54 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2001,7 +2001,7 @@
 		(fields_autoplaced yes)
 		(uuid "3ed90fd9-e9cc-4953-a69b-89e2f471fc63")
 		(property "Reference" "J4"
-			(at 101.6 129.5399 0)
+			(at 59.69 126.9999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2010,7 +2010,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 101.6 132.0799 0)
+			(at 59.69 129.5399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2019,7 +2019,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 100.33 132.08 0)
+			(at 58.42 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2028,7 +2028,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 100.33 132.08 0)
+			(at 58.42 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2037,7 +2037,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 100.33 132.08 0)
+			(at 58.42 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2127,7 +2127,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 100.33 139.7 180)
+		(at 58.42 137.16 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2136,7 +2136,7 @@
 		(fields_autoplaced yes)
 		(uuid "4bdb6f2d-2289-4584-bcf3-fd140520f25d")
 		(property "Reference" "J5"
-			(at 101.6 137.1599 0)
+			(at 59.69 134.6199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2145,7 +2145,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 101.6 139.6999 0)
+			(at 59.69 137.1599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2154,7 +2154,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 100.33 139.7 0)
+			(at 58.42 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2163,7 +2163,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 100.33 139.7 0)
+			(at 58.42 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2172,7 +2172,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 100.33 139.7 0)
+			(at 58.42 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2496,7 +2496,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 100.33 149.86 180)
+		(at 58.42 147.32 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2505,7 +2505,7 @@
 		(fields_autoplaced yes)
 		(uuid "e81a2d05-6f1a-45dd-b65f-c777ea2f9fa8")
 		(property "Reference" "J6"
-			(at 101.6 147.3199 0)
+			(at 59.69 144.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2514,7 +2514,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 101.6 149.8599 0)
+			(at 59.69 147.3199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2523,7 +2523,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
-			(at 100.33 149.86 0)
+			(at 58.42 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2532,7 +2532,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 100.33 149.86 0)
+			(at 58.42 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2541,7 +2541,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 100.33 149.86 0)
+			(at 58.42 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
