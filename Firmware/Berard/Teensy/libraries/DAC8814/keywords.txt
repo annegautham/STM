@@ -1,3 +1,0 @@
-DAC8814  	KEYWORD1
-begin    	KEYWORD2
-setOutput	KEYWORD2
