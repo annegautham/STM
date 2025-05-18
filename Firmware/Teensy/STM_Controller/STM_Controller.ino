@@ -105,7 +105,7 @@ SCK_ADC and SCK_DAC -> pin 13.
 #include <SPIFIFO.h>
 #include "logTable.h"
 #include <DAC8814.h>
-#include <LTC2326_16.h>
+#include <LTC2326_16.h>`
 
 
 /**************************************************************************/
