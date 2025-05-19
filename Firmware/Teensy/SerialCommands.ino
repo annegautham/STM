@@ -130,7 +130,9 @@ void serialCommand(String str)
         scanningEnabled = false; // Pause the scan
         updateStepSizes();
         if(scanningEnabledOnCommand) scanningEnabled = true; // Resume scan
-      }m
+      }
+     
+      
       else if(command == "XO") // X-offset
       {
         boolean scanningEnabledOnCommand = scanningEnabled;
