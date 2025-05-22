@@ -2,7 +2,8 @@
 /*
 
 Scanning Tunneling Microscope Feedback and Scan Controller for Teensy 3.X
-Last updated Oct 14, 2015
+Last updated Oct 
+.14, 2015
 http://dberard.com/home-built-stm/
 
 

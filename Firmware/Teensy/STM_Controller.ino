@@ -43,9 +43,9 @@ STM analog PCB to Teensy 3.1 connections:
 
 All GNDs -> Teensy GND
 +5V -> Vin
-~CS_DAC -> pin 20
-~LDAC -> pin 17
-~CS_ADC -> pin 21
+~CS_DAC -> pin 10
+~LDAC -> pin 9
+~CS_ADC -> pin 11
 CNV -> pin 4
 BUSY -> pin 3
 MISO_ADC -> pin 12
