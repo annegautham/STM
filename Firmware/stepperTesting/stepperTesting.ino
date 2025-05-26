@@ -17,7 +17,7 @@ void setup() {
 
 void loop() {
   coarseControl(1000, 1024, 0);
-  delay(5000);
+  delay(5);
 }
 
 
