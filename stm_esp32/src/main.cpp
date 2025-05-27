@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include <SPIFFS.h>
-#include <ESPAsyncWebServer.h>
 
 #include "config.hpp"
 #include "wifi.hpp"
@@ -18,6 +17,7 @@ void setup() {
   initSerial();
   initWebServer();
   initTasks();
+  Serial.println("Setup complete!");
 }
 
 void loop() {
