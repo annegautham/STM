@@ -65,6 +65,12 @@ SCK_ADC and SCK_DAC -> pin 13.
 #define BUSY 3                             // ADC BUSY pin
 #define SERIAL_LED 0                       // Indicates serial data transmission
 #define TUNNEL_LED 1                       // Indicates tunneling
+#define STEP1 15
+#define DIR1  14
+#define STEP2 3
+#define DIR2  4
+#define STEP3 1
+#define DIR3  2
 
 
 // DAC channel addresses:
@@ -188,6 +194,13 @@ void setup()
   pinMode(TUNNEL_LED, OUTPUT);
   digitalWrite(SERIAL_LED, LOW);
   digitalWrite(TUNNEL_LED, LOW);
+  pinMode(STEP1, OUTPUT);
+  pinMode(DIR1, OUTPUT);
+  pinMode(STEP2, OUTPUT);
+  pinMode(DIR2, OUTPUT);
+  pinMode(STEP3, OUTPUT);
+  pinMode(DIR3, OUTPUT);
+
 
   // Set the sample bias:
   dac.begin();
@@ -200,6 +213,8 @@ void setup()
   // Start the scan/PI/sigma-delta timer:
   scanTimer.priority(0);
   scanTimer.begin(incrementScan, dt);
+
+  
 }
 
 
@@ -539,11 +554,51 @@ void waitTimeStep()
 
 boolean engage()
 {
-  scanningEnabled = true;
-  engaged = true;
-  pidEnabled = true;
-  return true;
+  scanningEnabled = false;
+  engaged = false;
+  pidEnabled = false;
+  saturationCompensation = false;
+
+  const int maxAttempts = 100;                // Total motor steps allowed
+  const int timePerStep = 1000;               // Delay between step pulses (µs)
+  const int zStepPerMotor = 5;                // Z steps per motor increment
+  const int zThreshold = setpoint >> 1;       // Current threshold for detection
+
+  for (int i = 0; i < maxAttempts; i++) {
+    // Take 1 motor step forward
+    stepMotors(1, 0, timePerStep);
+
+    // Try approaching surface using Z piezo
+    for (int j = 0; j < zStepPerMotor; j++) {
+      z -= ENGAGE_SCANNER_STEP_SIZE;
+      waitTimeStep();
+
+      adc.begin();
+      input = adc.read();
+      if (abs(input) > zThreshold) {
+        pidEnabled = true;
+        engaged = true;
+        scanningEnabled = true;
+        saturationCompensation = true;
+        digitalWrite(TUNNEL_LED, HIGH);
+        return true;  // Surface found!
+      }
+
+      if (z <= -MAX_Z) {
+        retract();  // Prevent overextension
+        return false;
+      }
+
+      adc.convert();
+    }
+  }
+
+  // Surface not found after all attempts
+  retract();
+  return false;
 }
+
+
 
 
 /**************************************************************************/
@@ -561,6 +616,32 @@ void retract()
   engaged = false;
   z = MAX_Z; // Fully retract the Z-piezo
   digitalWrite(TUNNEL_LED, LOW);
+}
+
+/**************************************************************************/
+/*
+    Move the approach motors by the specified amount.
+*/
+/**************************************************************************/
+void stepMotors(int steps, int dir, int timePerStep)
+{
+  digitalWrite(DIR1, dir);
+  digitalWrite(DIR2, dir);
+  digitalWrite(DIR3, dir);
+
+  for (int i = 0; i < steps; i++) {
+    digitalWrite(STEP1, HIGH);
+    digitalWrite(STEP2, HIGH);
+    digitalWrite(STEP3, HIGH);
+
+    delayMicroseconds(timePerStep);
+
+    digitalWrite(STEP1, LOW);
+    digitalWrite(STEP2, LOW);
+    digitalWrite(STEP3, LOW);
+
+    delayMicroseconds(timePerStep);
+  }
 }
 
 
@@ -603,17 +684,6 @@ boolean engageScanner()
   return engaged;
 }
 
-
-/**************************************************************************/
-/*
-    Move the approach motor by the specified amount.
-*/
-/**************************************************************************
-
-void stepMotor(int stepSize, int dir)
-{
-  
-}
 
 /**************************************************************************/
 /*

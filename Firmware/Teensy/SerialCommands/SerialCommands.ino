@@ -83,6 +83,7 @@ void serialCommand(String str)
       {
         serialEnabled = false;
         Serial.flush();
+        Serial.println("SD");
         Serial.end();
         digitalWriteFast(SERIAL_LED, LOW);
       } 
@@ -90,6 +91,7 @@ void serialCommand(String str)
       
       else if(command == "SS") // Scan size in LSBs
       {
+        Serial.println("SS");
         boolean scanningEnabledOnCommand = scanningEnabled;
         int new_scanSize = Serial.parseInt();
         int xNew, yNew;
@@ -115,7 +117,8 @@ void serialCommand(String str)
       
       
       else if(command == "IP") // Image pixels
-      {        
+      {     
+        Serial.println("IP");   
         boolean scanningEnabledOnCommand = scanningEnabled;
         pixelsPerLine = Serial.parseInt() * 2;
         resetScan();
@@ -125,6 +128,7 @@ void serialCommand(String str)
       
       else if(command == "LR") // Line rate in Hz
       {
+        Serial.println("LR");
         boolean scanningEnabledOnCommand = scanningEnabled;
         lineRate = (float)Serial.parseInt() / 100.0f; // Line rate is multiplied by 100 for the transmission
         while(pixelCounter != 0); // Wait for the scanner to finish scanning a line
@@ -136,6 +140,7 @@ void serialCommand(String str)
       
       else if(command == "XO") // X-offset
       {
+        Serial.println("XO");
         boolean scanningEnabledOnCommand = scanningEnabled;
         int previous_xo = xo;
         int new_xo = Serial.parseInt();
@@ -148,6 +153,7 @@ void serialCommand(String str)
       
       else if(command == "YO") // Y-offset
       {
+        Serial.println("YO");
         boolean scanningEnabledOnCommand = scanningEnabled;
         int previous_yo = yo;
         int new_yo = Serial.parseInt();
@@ -160,6 +166,7 @@ void serialCommand(String str)
       
       else if(command == "SP") // Setpoint in LSBs
       {
+        Serial.println("SP");
         setpoint = Serial.parseInt();
         setpointLog = logTable[abs(setpoint)];       
       } 
@@ -167,6 +174,7 @@ void serialCommand(String str)
       
       else if(command == "SB") // Sample bias in LSBs
       {
+        Serial.println("SB");
         bias = Serial.parseInt();
         noInterrupts();
         dac.setOutput((uint16_t)(bias + 32768), DAC_CH_BIAS); // Set the sample bias
@@ -176,18 +184,21 @@ void serialCommand(String str)
       
       else if(command == "KP") // P gain
       {
+        Serial.println("KP");
         Kp = Serial.parseInt();          
       } 
       
       
       else if(command == "KI") // I gain
       {
+        Serial.println("KI");
         Ki = Serial.parseInt() * dt;        
       }
       
       
       else if(command == "EN") // Enable scanning
       {
+        Serial.println("EN");
         resetScan();
         scanningEnabled = true; 
       } 
@@ -195,18 +206,21 @@ void serialCommand(String str)
       
       else if(command == "DL") // Disable scanning
       {
+        Serial.println("DL");
         scanningEnabled = false;          
       } 
       
       
       else if(command == "TE") // Tip engage
       {        
+        Serial.println("TE");
         engage();          
       } 
       
       
       else if(command == "TR") // Tip retract
       {        
+        Serial.println("TR");
         retract();          
       }
   }
