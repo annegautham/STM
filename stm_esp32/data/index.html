@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ESP32 Console</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    h1   { font-size: 1.4rem; margin-bottom: .5rem; }
+    #log {
+      width: 100%; height: 300px;
+      border: 1px solid #ccc; padding: 6px;
+      font-family: monospace; font-size: .9rem;
+      overflow-y: auto; white-space: pre-wrap;
+      background: #f7f7f7;
+    }
+    #inputline { margin-top: .8rem; }
+    #cmd {
+      width: 80%; padding: .4rem; font-size: 1rem;
+    }
+    #send {
+      padding: .45rem 1rem; font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>ESP32 Web Console</h1>
+
+  <div id="log">(waiting for WebSocket …)</div>
+
+  <div id="inputline">
+    <input id="cmd" type="text" placeholder="Type command and press Enter">
+    <button id="send">Send</button>
+  </div>
+
+  <script>
+    let ws;
+    const log  = document.getElementById('log');
+    const cmd  = document.getElementById('cmd');
+    const send = document.getElementById('send');
+
+    function append(text) {
+      log.textContent += text + '\n';
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function connect() {
+      ws = new WebSocket(`ws://${location.host}/ws`);
+
+      ws.onopen    = () => append('[WS] connected');
+      ws.onmessage = e => append('[RX] ' + e.data);
+      ws.onclose   = () => {
+        append('[WS] disconnected — retrying in 2 s');
+        setTimeout(connect, 2000);
+      };
+    }
+
+    function sendCmd() {
+      if (!ws || ws.readyState !== 1) return;
+      const text = cmd.value.trim();
+      if (!text) return;
+      ws.send(JSON.stringify({cmd: text}));
+      append('[TX] ' + text);
+      cmd.value = '';
+    }
+
+    // event listeners
+    send.onclick      = sendCmd;
+    cmd.onkeypress    = e => { if (e.key === 'Enter') sendCmd(); };
+
+    // kick off WebSocket
+    connect();
+  </script>
+</body>
+</html>
