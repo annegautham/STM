@@ -21,6 +21,10 @@ void initSerial(void){
         Serial.println("Failed to create lineQ");
         return;
     }
+    else{
+        Serial.println("Scan Queue Created...");
+    }
+    return;
 }
 
 void serialTask(void *param) {

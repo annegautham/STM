@@ -9,12 +9,6 @@
 // Scan resolution
 #define PIXELS 512
 
-// WPA2 Enterprise Wi-Fi
-#define EAP_SSID      "eduroam"
-#define EAP_ID        "your_user@domain.edu"
-#define EAP_USERNAME  "your_user@domain.edu"
-#define EAP_PASSWORD  "your_password"
-
 //Serial Defines
 #define QUEUE_DEPTH 10 //max 10 scans in the queue
 
