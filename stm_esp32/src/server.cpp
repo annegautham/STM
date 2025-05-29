@@ -11,6 +11,7 @@
 // Global WebSocket server on port 81
 WebSocketsServer ws(81);
 WebServer server(80);  // HTTP server on port 80
+extern QueueHandle_t lineQ;
 
 // Forward declarations
 void handleClient();
@@ -33,6 +34,9 @@ void handleRoot() {
     Serial.println("index.html not found in SPIFFS");
     server.send(404, "text/plain", "File not found");
     return;
+  }
+  else{
+    Serial.println("Found SPIFFs index.html file");
   }
   server.streamFile(file, "text/html");
   file.close();
