@@ -1,74 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>ESP32 Console</title>
+  <meta charset="UTF-8">
+  <title>Teensy Control Panel</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    h1   { font-size: 1.4rem; margin-bottom: .5rem; }
-    #log {
-      width: 100%; height: 300px;
-      border: 1px solid #ccc; padding: 6px;
-      font-family: monospace; font-size: .9rem;
-      overflow-y: auto; white-space: pre-wrap;
-      background: #f7f7f7;
-    }
-    #inputline { margin-top: .8rem; }
-    #cmd {
-      width: 80%; padding: .4rem; font-size: 1rem;
-    }
-    #send {
-      padding: .45rem 1rem; font-size: 1rem;
-    }
+    body { font-family: sans-serif; padding: 20px; }
+    h2 { margin-top: 20px; }
+    button, input[type=range], input[type=number], input[type=text] { margin: 5px; }
+    label { margin-right: 10px; }
+    #log { background: #f0f0f0; padding: 10px; height: 200px; overflow-y: scroll; border: 1px solid #ccc; white-space: pre-wrap; font-family: monospace; }
   </style>
 </head>
 <body>
-  <h1>ESP32 Web Console</h1>
+  <h1>Teensy Control Panel</h1>
 
-  <div id="log">(waiting for WebSocket …)</div>
+  <h2>Serial Commands</h2>
+  <button onclick="sendCmd('SE')">Enable Serial (SE)</button>
+  <button onclick="sendCmd('SD')">Disable Serial (SD)</button>
 
-  <div id="inputline">
-    <input id="cmd" type="text" placeholder="Type command and press Enter">
-    <button id="send">Send</button>
-  </div>
+  <h2>Scan Control</h2>
+  <button onclick="sendCmd('EN')">Enable Scanning (EN)</button>
+  <button onclick="sendCmd('DL')">Disable Scanning (DL)</button>
+
+  <h2>Tip Control</h2>
+  <button onclick="sendCmd('TE')">Engage Tip (TE)</button>
+  <button onclick="sendCmd('TR')">Retract Tip (TR)</button>
+
+  <h2>Adjustments</h2>
+  <label>Scan Size (SS): <input type="number" id="ss" value="1000"></label>
+  <button onclick="sendCmd('SS' + getVal('ss'))">Send</button><br>
+
+  <label>Pixels per Line (IP): <input type="number" id="ip" value="1000"></label>
+  <button onclick="sendCmd('IP' + getVal('ip'))">Send</button><br>
+
+  <label>Line Rate (LR x100 Hz): <input type="number" id="lr" value="500"></label>
+  <button onclick="sendCmd('LR' + getVal('lr'))">Send</button><br>
+
+  <label>X-Offset (XO): <input type="number" id="xo" value="0"></label>
+  <button onclick="sendCmd('XO' + getVal('xo'))">Send</button><br>
+
+  <label>Y-Offset (YO): <input type="number" id="yo" value="0"></label>
+  <button onclick="sendCmd('YO' + getVal('yo'))">Send</button><br>
+
+  <label>Setpoint (SP): <input type="number" id="sp" value="1000"></label>
+  <button onclick="sendCmd('SP' + getVal('sp'))">Send</button><br>
+
+  <label>Sample Bias (SB): <input type="number" id="sb" value="0"></label>
+  <button onclick="sendCmd('SB' + getVal('sb'))">Send</button><br>
+
+  <label>Kp: <input type="number" id="kp" value="100"></label>
+  <button onclick="sendCmd('KP' + getVal('kp'))">Send</button><br>
+
+  <label>Ki: <input type="number" id="ki" value="10"></label>
+  <button onclick="sendCmd('KI' + getVal('ki'))">Send</button><br>
+
+  <h2>Raw Command</h2>
+  <input type="text" id="raw" placeholder="Enter raw command">
+  <button onclick="sendCmd(getVal('raw'))">Send</button>
+
+  <h2>Console Log</h2>
+  <div id="log"></div>
 
   <script>
     let ws;
-    const log  = document.getElementById('log');
-    const cmd  = document.getElementById('cmd');
-    const send = document.getElementById('send');
+    let logDiv = document.getElementById("log");
 
-    function append(text) {
-      log.textContent += text + '\n';
-      log.scrollTop = log.scrollHeight;
-    }
-
-    function connect() {
+    function initWebSocket() {
       ws = new WebSocket(`ws://${location.hostname}:81/`);
 
-      ws.onopen    = () => append('[WS] connected');
-      ws.onmessage = e => append('[RX] ' + e.data);
-      ws.onclose   = () => {
-        append('[WS] disconnected — retrying in 2 s');
-        setTimeout(connect, 2000);
-      };
+      ws.onopen = () => log("[WebSocket] Connected");
+      ws.onmessage = (event) => log("[ESP32] " + event.data);
+      ws.onclose = () => log("[WebSocket] Disconnected");
+      ws.onerror = (e) => log("[WebSocket] Error: " + e);
     }
 
-    function sendCmd() {
-      if (!ws || ws.readyState !== 1) return;
-      const text = cmd.value.trim();
-      if (!text) return;
-      ws.send(JSON.stringify({cmd: text}));
-      append('[TX] ' + text);
-      cmd.value = '';
+    function sendCmd(cmd) {
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(cmd);
+        log("[Browser] Sent: " + cmd);
+      } else {
+        log("[Browser] WebSocket not connected. Cannot send: " + cmd);
+      }
     }
 
-    // event listeners
-    send.onclick      = sendCmd;
-    cmd.onkeypress    = e => { if (e.key === 'Enter') sendCmd(); };
+    function getVal(id) {
+      return document.getElementById(id).value;
+    }
 
-    // kick off WebSocket
-    connect();
+    function log(msg) {
+      const now = new Date().toLocaleTimeString();
+      logDiv.textContent += `[${now}] ${msg}\n`;
+      logDiv.scrollTop = logDiv.scrollHeight;
+    }
+
+    // Start WebSocket
+    initWebSocket();
   </script>
 </body>
 </html>
