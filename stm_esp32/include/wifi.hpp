@@ -4,5 +4,6 @@
 #include "config.hpp"
 
 void initWiFi();
+void connect_wifi_enterprise();
 
 #endif

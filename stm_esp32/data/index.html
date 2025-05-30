@@ -44,7 +44,7 @@
     }
 
     function connect() {
-      ws = new WebSocket(`ws://${location.host}/ws`);
+      ws = new WebSocket(`ws://${location.hostname}:81/`);
 
       ws.onopen    = () => append('[WS] connected');
       ws.onmessage = e => append('[RX] ' + e.data);

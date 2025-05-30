@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <WiFi.h>
 
+#include "secrets.h"
 #include "wifi.hpp"
 #include "esp_wpa2.h"
 
@@ -17,17 +18,7 @@ void initWiFi() {
   Serial.println("\nConnected! IP: " + WiFi.localIP().toString());
 }
 
-// #define EAP_ANONYMOUS_IDENTITY "anonymous@northwestern.edu" //anonymous@example.com, or you can use also nickname@example.com
-// #define EAP_IDENTITY "vcs5888@u.northwestern.edu" //nickname@example.com, at some organizations should work nickname only without realm, but it is not recommended
-// #define EAP_PASSWORD "dcm93130704Nw!!!" //password for eduroam account
-// #define EAP_USERNAME "vcs5888@u.northwestern.edu" // the Username is the same as the Identity in most eduroam networks.
-
-// //SSID NAME
-// const char* ssid = "eduroam"; // eduroam SSID
-
-
 // void initWiFi() {
-
 //     Serial.print(F("Connecting to network: "));
 //     Serial.println(ssid);
 //     // WPA2 enterprise magic starts here
@@ -44,3 +35,24 @@ void initWiFi() {
 //     Serial.println(WiFi.localIP()); //print LAN IP
 
 // }
+
+void connect_wifi_enterprise(){
+    WiFi.disconnect(true);
+    int counter = 0;
+    WiFi.mode(WIFI_STA);    //init wifi mode
+    WiFi.begin(EAP_WIFI_SSID, WPA2_AUTH_PEAP, EAP_USERNAME, EAP_USERNAME, EAP_PASSWORD);
+
+    while(WiFi.status()!= WL_CONNECTED){
+        delay(500);
+        Serial.print(".");
+        counter++;
+        if (counter >= 60) {  //after 30 seconds timeout - reset board
+        ESP.restart();
+        }
+    }
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address set: ");
+  Serial.println(WiFi.localIP());  //print LAN IP}
+}
+

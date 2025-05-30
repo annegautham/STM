@@ -92,3 +92,11 @@ void initWebServer() {
     "WebServerTask", 4096, NULL, 1, NULL
   );
 }
+
+void onWsEvent(uint8_t num, WStype_t type, uint8_t *payload, size_t length) {
+  if (type == WStype_TEXT) {
+    Serial.printf("[WS] Received: %s\n", payload);
+    // Echo back the message
+    ws.sendTXT(num, "ESP32 received: " + String((char*)payload));
+  }
+}
