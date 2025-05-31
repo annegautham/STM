@@ -6,17 +6,6 @@
 
 #include "config.hpp"
 
-// Struct representing one scan line
-struct ScanLine {
-  uint16_t z[PIXELS];
-  uint16_t err[PIXELS];
-};
-
-// Global FreeRTOS queue for scan lines
-extern QueueHandle_t lineQ;
-
-void initSerial(void);
-
 // Reads UART, parses scan lines, validates CRC
 void serialTask(void *param);
 

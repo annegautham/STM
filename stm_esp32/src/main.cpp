@@ -18,7 +18,6 @@ void setup() {
   //initWiFi(); 
   connect_wifi_enterprise(); //eduroam works!
   initSPIFFS(); 
-  initSerial();
   initWebServer();
   initTasks();
   Serial.println("Setup complete!");

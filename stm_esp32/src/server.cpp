@@ -11,21 +11,9 @@
 // Global WebSocket server on port 81
 WebSocketsServer ws(81);
 WebServer server(80);  // HTTP server on port 80
-extern QueueHandle_t lineQ;
 
 // Forward declarations
 void handleClient();
-
-// WebSocket task: stream ScanLine objects to clients
-void wsTask(void *param) {
-  ScanLine *line;
-  while (true) {
-    if (xQueueReceive(lineQ, &line, portMAX_DELAY)) {
-      ws.broadcastBIN((uint8_t *)line, sizeof(ScanLine));
-      heap_caps_free(line);
-    }
-  }
-}
 
 // Serve index.html from SPIFFS
 void handleRoot() {

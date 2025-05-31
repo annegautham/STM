@@ -3,55 +3,109 @@
 #include "config.hpp"
 #include "serial.hpp"
 
-QueueHandle_t lineQ = NULL;
+#define NUM_PIXELS 512
+#define NUM_CHANNELS 4
+#define DATA_SIZE (NUM_PIXELS * NUM_CHANNELS * sizeof(int32_t))
+#define PACKET_SIZE (2 + 2 + DATA_SIZE + 2)  // Header + Line + Data + CRC
 
-uint16_t crc16_kermit(const uint8_t *data, size_t len) {
-  uint16_t crc = 0;
-  for (size_t i = 0; i < len; ++i) {
-    crc ^= data[i];
-    for (uint8_t j = 0; j < 8; ++j)
-      crc = (crc >> 1) ^ (crc & 1 ? 0x8408 : 0);
-  }
-  return crc;
-}
+// Internal buffer
+static uint8_t packetBuffer[PACKET_SIZE];
+static int bufferPos = 0;
+static bool readingPacket = false;
 
-void initSerial(void){
-    lineQ = xQueueCreate(QUEUE_DEPTH, sizeof(ScanLine*));  // assign to global
-    if (!lineQ) {
-        Serial.println("Failed to create lineQ");
-        return;
-    }
-    else{
-        Serial.println("Scan Queue Created...");
-    }
-    return;
-}
+// RTOS task handle
+TaskHandle_t serialTaskHandle = NULL;
 
+// Forward declarations
+void serialTask(void *param);
+void processPacket(uint8_t *data);
+int32_t bytesToInt32(uint8_t *b);
+uint16_t crc16_update(uint16_t crc, uint8_t a);
+
+// Serial Task: Poll Serial2 for incoming data
 void serialTask(void *param) {
-  const int HEADER = 8, PAYLOAD = PIXELS * 4, CRC = 2;
-  uint8_t buf[HEADER + PAYLOAD + CRC];
+  Serial2.begin(115200, SERIAL_8N1, 16, 17); // Adjust pins as needed
+
+  Serial.println("[SerialTask] Ready to receive STM packets...");
 
   while (true) {
-    if (Serial2.available() >= 2 && Serial2.peek() == 0xA5) {
-      Serial2.read(); if (Serial2.read() != 0x5A) continue;
+    while (Serial2.available()) {
+      uint8_t byte = Serial2.read();
 
-      Serial2.readBytes(&buf[2], HEADER - 2);
-      uint16_t len = buf[6] | (buf[7] << 8);
-      if (len != PAYLOAD) continue;
-      Serial2.readBytes(&buf[8], PAYLOAD + CRC);
-
-      uint16_t calc = crc16_kermit(buf, HEADER + PAYLOAD);
-      uint16_t recv = buf[8 + PAYLOAD] | (buf[8 + PAYLOAD + 1] << 8);
-
-      if (calc == recv) {
-        ScanLine *line = (ScanLine *)heap_caps_malloc(sizeof(ScanLine), MALLOC_CAP_8BIT);
-        for (int i = 0; i < PIXELS; ++i) {
-          line->z[i]   = buf[8 + i*4 + 0] | (buf[8 + i*4 + 1] << 8);
-          line->err[i] = buf[8 + i*4 + 2] | (buf[8 + i*4 + 3] << 8);
+      static uint8_t lastByte = 0;
+      if (!readingPacket) {
+        if (lastByte == 0xAA && byte == 0x55) {
+          readingPacket = true;
+          bufferPos = 0;
         }
-        xQueueSend(lineQ, &line, 0);
+        lastByte = byte;
+      } else {
+        packetBuffer[bufferPos++] = byte;
+        if (bufferPos >= PACKET_SIZE - 2) {  // Exclude header
+          processPacket(packetBuffer);
+          readingPacket = false;
+        }
       }
     }
-    vTaskDelay(1);
+    vTaskDelay(pdMS_TO_TICKS(1));  // Yield to other tasks
   }
+}
+
+// Process a single packet: validate CRC, print debug info
+void processPacket(uint8_t *data) {
+  uint16_t lineNum = (data[0] << 8) | data[1];
+
+  // CRC calculation
+  uint16_t crc_calc = 0xFFFF;
+  crc_calc = crc16_update(crc_calc, data[0]);
+  crc_calc = crc16_update(crc_calc, data[1]);
+  for (int i = 0; i < DATA_SIZE; i++) {
+    crc_calc = crc16_update(crc_calc, data[2 + i]);
+  }
+  uint16_t crc_recv = (data[2 + DATA_SIZE] << 8) | data[2 + DATA_SIZE + 1];
+
+  Serial.print("\n[Line ");
+  Serial.print(lineNum);
+  Serial.println("]");
+
+  if (crc_calc != crc_recv) {
+    Serial.println("CRC MISMATCH! Packet discarded.");
+    Serial.print("Expected: 0x"); Serial.print(crc_calc, HEX);
+    Serial.print(" | Received: 0x"); Serial.println(crc_recv, HEX);
+    return;
+  }
+
+  Serial.println("CRC OK.");
+
+  // Print a few pixels
+  for (int i = 0; i < NUM_PIXELS; i += 100) {
+    int offset = i * NUM_CHANNELS * 4;
+    int32_t z = bytesToInt32(&data[2 + offset]);
+    int32_t zr = bytesToInt32(&data[2 + offset + 4]);
+    int32_t e = bytesToInt32(&data[2 + offset + 8]);
+    int32_t er = bytesToInt32(&data[2 + offset + 12]);
+
+    Serial.print("Pixel "); Serial.print(i);
+    Serial.print(": z="); Serial.print(z);
+    Serial.print(", zr="); Serial.print(zr);
+    Serial.print(", e="); Serial.print(e);
+    Serial.print(", er="); Serial.println(er);
+  }
+
+  Serial.print("CRC: 0x"); Serial.println(crc_recv, HEX);
+  Serial.println("----");
+}
+
+int32_t bytesToInt32(uint8_t *b) {
+  return ((int32_t)b[0] << 24) | ((int32_t)b[1] << 16) |
+         ((int32_t)b[2] << 8) | (int32_t)b[3];
+}
+
+uint16_t crc16_update(uint16_t crc, uint8_t a) {
+  crc ^= a;
+  for (int i = 0; i < 8; ++i) {
+    if (crc & 1) crc = (crc >> 1) ^ 0x8408;
+    else crc = crc >> 1;
+  }
+  return crc;
 }
