@@ -1,40 +1,7 @@
-/**************************************************************************/
-/*
+#include <Arduino.h>
+#include "globals.hpp"
+#include "SerialCommands.hpp"
 
-Scanning Tunneling Microscope Feedback and Scan Controller for Teensy 3.X
-Last updated Oct 
-.14, 2015
-http://dberard.com/home-built-stm/
-
-
- * Copyright (c) Daniel Berard, daniel.berard@mail.mcgill.ca
- *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * 1. The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
- * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
-
-
-This function reads incoming serial data and compares it to a list of 
-commands used to control the microscope.
-
-*/
-/**************************************************************************/
 
 void checkSerial()
 {
@@ -223,7 +190,30 @@ void serialCommand(String str)
         Serial.println("TR");
         retract();          
       }
-  }
+
+      else if (command == "TM") 
+      {  // Toggle manual mode
+        manualEnabled = !manualEnabled;
+        Serial.print("Manual control ");
+        Serial.println(manualEnabled ? "enabled" : "disabled");
+      }
+      else if (command == "MP") 
+      {  // Manual +1
+        if (manualEnabled) {
+            stepMotors(1, 1, 1000);  // 1 step in positive direction
+            Serial.println("Stepped +1");
+        }
+      }
+
+      else if (command == "MN") 
+      {  // Manual -1
+        if (manualEnabled) {
+          stepMotors(1, 0, 1000);  // 1 step in negative direction
+          Serial.println("Stepped -1");
+        }       
+      }
+    }
+
 }
 
 /**************************************************************************/
