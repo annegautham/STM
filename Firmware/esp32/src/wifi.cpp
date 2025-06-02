@@ -40,8 +40,8 @@ void connect_wifi_enterprise(){
     WiFi.disconnect(true);
     int counter = 0;
     WiFi.mode(WIFI_STA);    //init wifi mode
-    // WiFi.begin(EAP_WIFI_SSID, WPA2_AUTH_PEAP, EAP_USERNAME, EAP_USERNAME, EAP_PASSWORD);
-    WiFi.begin("iPhone", "maclappy");
+    WiFi.begin(EAP_WIFI_SSID, WPA2_AUTH_PEAP, EAP_USERNAME, EAP_USERNAME, EAP_PASSWORD);
+    //WiFi.begin("iPhone", "maclappy");
 
     while(WiFi.status()!= WL_CONNECTED){
         delay(500);

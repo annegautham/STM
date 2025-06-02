@@ -57,16 +57,11 @@ void onWsEvent(uint8_t num, WStype_t type, uint8_t *payload, size_t length) {
   if (type == WStype_TEXT) {
     String msg = String((char*)payload);
     Serial.printf("[WS] Received: %s\n", msg.c_str());
+    ws.sendTXT(num, "ESP32 Recieved: " + msg);
 
-    if (msg == "plus") {
-      Serial2.print("MP");  // Step +1
-    } else if (msg == "down") {
-      Serial2.print("MN");  // Step -1
-    } else if (msg == "manual") {
-      Serial2.print("TM");  // Toggle manual mode
-    }
-
-    ws.sendTXT(num, "ESP32 forwarded: " + msg);
+    Serial2.println(msg);
+    ws.sendTXT(num, "ESP32 forwarded to Teensy: " + msg);
+  
   }
 }
 
