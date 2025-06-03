@@ -3,24 +3,36 @@
 #include "SerialCommands.hpp"
 
 
-void checkSerial()
-{
+// void checkSerial()
+// {
   
-  String serialString;
+//   String serialString;
   
-  if(Serial.available() > 0)
-  {
-    for(int i = 0; i < 2; i++)  // Accepts 2 char commands
-    {
-      delay(1); // This seems to be necessary, not sure why
-      char inChar = Serial.read();
-      serialString += inChar;
+//   if(ESPSerial.available() > 0)
+//   {
+//     for(int i = 0; i < 2; i++)  // Accepts 2 char commands
+//     {
+//       delay(1); // This seems to be necessary, not sure why
+//       char inChar = ESPSerial.read();
+//       serialString += inChar;
+//     }
+//   }
+//   serialCommand(serialString);
+//   // serialString = "";
+// }
+
+void checkSerial() {
+  while (ESPSerial.available()) {
+    String serialString = ESPSerial.readStringUntil('\n');
+    serialString.trim();  // Remove trailing \r or whitespace
+
+    if (serialString.length() > 0) {
+      console.print("[From ESP32] ");
+      console.println(serialString);
+      serialCommand(serialString);
     }
   }
-  serialCommand(serialString);
-  serialString = "";
 }
-
 /**************************************************************************/
 
 void serialCommand(String str)
@@ -39,8 +51,8 @@ void serialCommand(String str)
       
       if(command == "SE") // Enable serial communications
       {
-        Serial.begin(115200);
-        Serial.println("SE");
+        console.begin(115200);
+        console.println("SE");
         serialEnabled = true;
         digitalWriteFast(SERIAL_LED, HIGH);
       }
@@ -49,18 +61,18 @@ void serialCommand(String str)
       else if(command == "SD") // Disable serial communications
       {
         serialEnabled = false;
-        Serial.flush();
-        Serial.println("SD");
-        Serial.end();
+        ESPSerial.flush();
+        console.println("SD");
+        ESPSerial.end();
         digitalWriteFast(SERIAL_LED, LOW);
       } 
       
       
       else if(command == "SS") // Scan size in LSBs
       {
-        Serial.println("SS");
+        console.println("SS");
         boolean scanningEnabledOnCommand = scanningEnabled;
-        int new_scanSize = Serial.parseInt();
+        int new_scanSize = ESPSerial.parseInt();
         int xNew, yNew;
         
         // Calculate position to move to:
@@ -85,9 +97,9 @@ void serialCommand(String str)
       
       else if(command == "IP") // Image pixels
       {     
-        Serial.println("IP");   
+        console.println("IP");   
         boolean scanningEnabledOnCommand = scanningEnabled;
-        pixelsPerLine = Serial.parseInt() * 2;
+        pixelsPerLine = ESPSerial.parseInt() * 2;
         resetScan();
         if(scanningEnabledOnCommand) scanningEnabled = true;
       }
@@ -95,9 +107,9 @@ void serialCommand(String str)
       
       else if(command == "LR") // Line rate in Hz
       {
-        Serial.println("LR");
+        console.println("LR");
         boolean scanningEnabledOnCommand = scanningEnabled;
-        lineRate = (float)Serial.parseInt() / 100.0f; // Line rate is multiplied by 100 for the transmission
+        lineRate = (float)ESPSerial.parseInt() / 100.0f; // Line rate is multiplied by 100 for the transmission
         while(pixelCounter != 0); // Wait for the scanner to finish scanning a line
         scanningEnabled = false; // Pause the scan
         updateStepSizes();
@@ -107,10 +119,10 @@ void serialCommand(String str)
       
       else if(command == "XO") // X-offset
       {
-        Serial.println("XO");
+        console.println("XO");
         boolean scanningEnabledOnCommand = scanningEnabled;
         int previous_xo = xo;
-        int new_xo = Serial.parseInt();
+        int new_xo = ESPSerial.parseInt();
         scanningEnabled = false; // Pause the scan
         xo = new_xo;
         moveTip(x - previous_xo + xo, y); // Move over by (xo, yo)
@@ -120,10 +132,10 @@ void serialCommand(String str)
       
       else if(command == "YO") // Y-offset
       {
-        Serial.println("YO");
+        console.println("YO");
         boolean scanningEnabledOnCommand = scanningEnabled;
         int previous_yo = yo;
-        int new_yo = Serial.parseInt();
+        int new_yo = ESPSerial.parseInt();
         scanningEnabled = false;
         yo = new_yo;
         moveTip(x, y - previous_yo + yo);
@@ -133,16 +145,16 @@ void serialCommand(String str)
       
       else if(command == "SP") // Setpoint in LSBs
       {
-        Serial.println("SP");
-        setpoint = Serial.parseInt();
+        console.println("SP");
+        setpoint = ESPSerial.parseInt();
         setpointLog = logTable[abs(setpoint)];       
       } 
       
       
       else if(command == "SB") // Sample bias in LSBs
       {
-        Serial.println("SB");
-        bias = Serial.parseInt();
+        console.println("SB");
+        bias = ESPSerial.parseInt();
         noInterrupts();
         dac.setOutput((uint16_t)(bias + 32768), DAC_CH_BIAS); // Set the sample bias
         interrupts();          
@@ -151,21 +163,21 @@ void serialCommand(String str)
       
       else if(command == "KP") // P gain
       {
-        Serial.println("KP");
-        Kp = Serial.parseInt();          
+        console.println("KP");
+        Kp = ESPSerial.parseInt();          
       } 
       
       
       else if(command == "KI") // I gain
       {
-        Serial.println("KI");
-        Ki = Serial.parseInt() * dt;        
+        console.println("KI");
+        Ki = ESPSerial.parseInt() * dt;        
       }
       
       
       else if(command == "EN") // Enable scanning
       {
-        Serial.println("EN");
+        console.println("EN");
         resetScan();
         scanningEnabled = true; 
       } 
@@ -173,43 +185,43 @@ void serialCommand(String str)
       
       else if(command == "DL") // Disable scanning
       {
-        Serial.println("DL");
+        ESPSerial.println("DL");
         scanningEnabled = false;          
       } 
       
       
       else if(command == "TE") // Tip engage
       {        
-        Serial.println("TE");
+        ESPSerial.println("TE");
         engage();          
       } 
       
       
       else if(command == "TR") // Tip retract
       {        
-        Serial.println("TR");
+        ESPSerial.println("TR");
         retract();          
       }
 
       else if (command == "TM") 
       {  // Toggle manual mode
         manualEnabled = !manualEnabled;
-        Serial.print("Manual control ");
-        Serial.println(manualEnabled ? "enabled" : "disabled");
+        console.print("Manual control ");
+        console.println(manualEnabled ? "enabled" : "disabled");
       }
       else if (command == "MP") 
       {  // Manual +1
         if (manualEnabled) {
-            stepMotors(1, 1, 1000);  // 1 step in positive direction
-            Serial.println("Stepped +1");
+            stepMotors(1000, 1, 1000);  // 1 step in positive direction
+            console.println("Stepped +1");
         }
       }
 
       else if (command == "MN") 
       {  // Manual -1
         if (manualEnabled) {
-          stepMotors(1, 0, 1000);  // 1 step in negative direction
-          Serial.println("Stepped -1");
+          stepMotors(1000, 0, 1000);  // 1 step in negative direction
+          console.println("Stepped -1");
         }       
       }
     }

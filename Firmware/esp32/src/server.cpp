@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include "server.hpp"
 #include "serial.hpp"
+#include "tasks.hpp"
 #include <SPIFFS.h>
 #include <ArduinoJson.h>
 #include <WebServer.h>
@@ -53,17 +54,38 @@ void listSPIFFS() {
 }
 
 // WebSocket event handler
+// void onWsEvent(uint8_t num, WStype_t type, uint8_t *payload, size_t length) {
+//   if (type == WStype_TEXT) {
+//     String msg = String((char*)payload);
+//     Serial.printf("[WS] Received: %s\n", msg.c_str());
+//     ws.sendTXT(num, "ESP32 Recieved: " + msg);
+
+//     Serial2.println(msg);
+//     ws.sendTXT(num, "ESP32 forwarded to Teensy: " + msg);
+  
+//   }
+// }
+
+
 void onWsEvent(uint8_t num, WStype_t type, uint8_t *payload, size_t length) {
   if (type == WStype_TEXT) {
-    String msg = String((char*)payload);
-    Serial.printf("[WS] Received: %s\n", msg.c_str());
-    ws.sendTXT(num, "ESP32 Recieved: " + msg);
+    String msg = String((char*)payload, length);  // Safer than appending char-by-char
+    msg.trim();
 
-    Serial2.println(msg);
-    ws.sendTXT(num, "ESP32 forwarded to Teensy: " + msg);
-  
+    if (msg.length() > 0) {
+      Serial.print("[WS] Received: ");
+      Serial.println(msg);  // Full message now
+
+      msg += '\n';
+      xQueueSend(teensyQueue, &msg, portMAX_DELAY);  
+
+      ws.sendTXT(num, "ESP32 forwarded to Teensy: " + msg);
+    }
   }
 }
+
+
+
 
 // Initialize web server and websocket
 void initWebServer() {

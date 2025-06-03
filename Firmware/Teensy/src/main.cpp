@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <SerialCommands.hpp>
 #include "globals.hpp"
 #include "logTable.h"
 #include <DAC8814.h>
@@ -184,6 +185,8 @@ boolean saturationCompensation = true; // The LTC2326-16 seems to output 0 when 
 
 void setup()
 {
+  console.begin(115200);
+  ESPSerial.begin(9600);
   pinMode(SERIAL_LED, OUTPUT);
   pinMode(TUNNEL_LED, OUTPUT);
   digitalWrite(SERIAL_LED, LOW);
@@ -222,58 +225,61 @@ void loop()
 {
   checkSerial(); // Check for incoming serial commands. See "SerialCommands" tab.
   
-  // Illuminate tunelling LED if the tunneling current is > setpoint/2:
-  if(abs(input) > setpoint >> 1) digitalWriteFast(TUNNEL_LED, HIGH);
-  else digitalWriteFast(TUNNEL_LED, LOW);
+  // // Illuminate tunelling LED if the tunneling current is > setpoint/2:
+  // if(abs(input) > setpoint >> 1) digitalWriteFast(TUNNEL_LED, HIGH);
+  // else digitalWriteFast(TUNNEL_LED, LOW);
   
-  // Send data over USB if a line has been scanned and re-scanned:
-  if(sendData)
-  {    
-    if(!fillData1) // Print data1
-    {
-      data1[0] = (byte)((lineCounter >> 8) & 0xFF); // High byte
-      data1[1] = (byte)(lineCounter & 0xFF); // Low byte
+  // // Send data over USB if a line has been scanned and re-scanned:
+  // if(sendData)
+  // {    
+  //   if(!fillData1) // Print data1
+  //   {
+  //     data1[0] = (byte)((lineCounter >> 8) & 0xFF); // High byte
+  //     data1[1] = (byte)(lineCounter & 0xFF); // Low byte
       
-      if(serialEnabled)
-      {
-        Serial.println("DATA");
-        Serial.write(data1, DATA_BUFFER_LENGTH);
-      }
+  //     if(serialEnabled)
+  //     {
+  //       console.println("DATA");
+  //       console.write(data1, DATA_BUFFER_LENGTH);
+  //     }
       
-      // Uncomment this block to print human-readable data to the serial port:
-      /*
-      for(unsigned int i = 0; i < pixelsPerLine * 2; i++) // Loop over pixels
-      {
-        Serial.print((int)((int)data1[4*i+2] << 24 | (int)data1[4*i+3] << 16 |(int)data1[4*i+4] << 8 |(int)data1[4*i+5]));
-        Serial.print(" ");
-      }
-      */
-    }
-    else
-    {
-      data2[0] = (byte)((lineCounter >> 8) & 0xFF); // High byte
-      data2[1] = (byte)(lineCounter & 0xFF); // Low byte
+  //     // Uncomment this block to print human-readable data to the serial port:
+  //     /*
+  //     for(unsigned int i = 0; i < pixelsPerLine * 2; i++) // Loop over pixels
+  //     {
+  //       Serial.print((int)((int)data1[4*i+2] << 24 | (int)data1[4*i+3] << 16 |(int)data1[4*i+4] << 8 |(int)data1[4*i+5]));
+  //       Serial.print(" ");
+  //     }
+  //     */
+  //   }
+  //   else
+  //   {
+  //     data2[0] = (byte)((lineCounter >> 8) & 0xFF); // High byte
+  //     data2[1] = (byte)(lineCounter & 0xFF); // Low byte
       
-      if(serialEnabled)
-      {
-        Serial.println("DATA");
-        Serial.write(data2, DATA_BUFFER_LENGTH);
-      }
+  //     if(serialEnabled)
+  //     {
+  //       console.println("DATA");
+  //       console.write(data2, DATA_BUFFER_LENGTH);
+  //     }
       
-      // Uncomment this block to print human-readable data to the serial port:
-      /*
-      for(unsigned int i = 0; i < pixelsPerLine * 2; i++) // Loop over pixels
-      {
-        Serial.print((int)((int)data2[4*i+2] << 24 | (int)data2[4*i+3] << 16 |(int)data2[4*i+4] << 8 |(int)data2[4*i+5]));
-        Serial.print(" ");
-      }
-      */     
-    }
-    Serial.println();
+  //     // Uncomment this block to print human-readable data to the serial port:
+  //     /*
+  //     for(unsigned int i = 0; i < pixelsPerLine * 2; i++) // Loop over pixels
+  //     {
+  //       Serial.print((int)((int)data2[4*i+2] << 24 | (int)data2[4*i+3] << 16 |(int)data2[4*i+4] << 8 |(int)data2[4*i+5]));
+  //       Serial.print(" ");
+  //     }
+  //     */     
+  //   }
+  //   console.println();
     
-    sendData = false;
-  }
+  //   sendData = false;
+  // }
+
+  
 }
+
 
 
 /**************************************************************************/

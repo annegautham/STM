@@ -24,7 +24,7 @@ uint16_t crc16_update(uint16_t crc, uint8_t a);
 
 // Serial Task: Poll Serial2 for incoming data
 void serialTask(void *param) {
-  Serial2.begin(115200, SERIAL_8N1, 16, 17); // Adjust pins as needed
+  // Serial2.begin(115200, SERIAL_8N1, 16, 17); // Adjust pins as needed
 
   Serial.println("[SerialTask] Ready to receive STM packets...");
 

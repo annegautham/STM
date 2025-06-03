@@ -4,9 +4,7 @@
 
 // Function declarations from SerialCommands.cpp
 // Replace these with actual functions from your SerialCommands.ino file
-
+#define ESPSerial Serial2
+#define console Serial
+void checkSerial();
 void serialCommand(String str);
-void enableSerial();
-void disableSerial();
-void scanSizeLSBs();
-void someOtherCommand();  // Add more functions as needed

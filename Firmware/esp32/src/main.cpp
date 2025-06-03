@@ -13,7 +13,7 @@ extern WebServer server;
 
 void setup() {
   Serial.begin(115200); //Serial0 for interface
-  Serial2.begin(UART_BAUDRATE, SERIAL_8N1, UART_RX, UART_TX); //Serial2 for Teensy UART
+  Serial2.begin(9600, SERIAL_8N1, 16, 17); //Serial2 for Teensy UART
 
   //initWiFi(); 
   connect_wifi_enterprise(); //eduroam works!
@@ -29,3 +29,8 @@ void loop() {
    ws.onEvent(onWsEvent);
 }
 
+
+// void loop() {
+//   Serial2.println("HELLO FROM ESP32");
+//   delay(1000);
+// }
