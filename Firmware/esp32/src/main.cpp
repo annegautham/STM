@@ -28,9 +28,3 @@ void loop() {
    ws.loop(); //web server not synchronous
    ws.onEvent(onWsEvent);
 }
-
-
-// void loop() {
-//   Serial2.println("HELLO FROM ESP32");
-//   delay(1000);
-// }

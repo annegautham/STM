@@ -1036,12 +1036,6 @@
 		(uuid "30ff4ab9-b079-4134-95ef-fdeb8b9c23e1")
 	)
 	(junction
-		(at 125.73 30.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3c056d9c-25db-4e97-a16b-848b18872c9f")
-	)
-	(junction
 		(at 69.85 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1148,6 +1142,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c831cc8b-199c-43f9-920f-cd39998483a4")
+	)
+	(junction
+		(at 127 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c92d8381-5fb8-4eb9-8fb1-329cd16ff315")
 	)
 	(junction
 		(at 181.61 45.72)
@@ -1535,7 +1535,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 30.48) (xy 125.73 30.48)
+			(xy 54.61 35.56) (xy 127 35.56)
 		)
 		(stroke
 			(width 0)
@@ -1775,7 +1775,7 @@
 	)
 	(wire
 		(pts
-			(xy 196.85 30.48) (xy 196.85 45.72)
+			(xy 196.85 35.56) (xy 196.85 45.72)
 		)
 		(stroke
 			(width 0)
@@ -1792,16 +1792,6 @@
 			(type default)
 		)
 		(uuid "86335cbe-85d3-4365-af0e-ab552e792aa9")
-	)
-	(wire
-		(pts
-			(xy 125.73 30.48) (xy 196.85 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "87554034-5955-4ba2-a74b-b05262b2ca44")
 	)
 	(wire
 		(pts
@@ -1925,6 +1915,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 35.56) (xy 196.85 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d191d60-36ff-45ab-bdf8-b290e407f2f5")
+	)
+	(wire
+		(pts
 			(xy 181.61 105.41) (xy 179.07 105.41)
 		)
 		(stroke
@@ -2035,7 +2035,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 30.48) (xy 54.61 45.72)
+			(xy 54.61 35.56) (xy 54.61 45.72)
 		)
 		(stroke
 			(width 0)
@@ -2185,7 +2185,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 30.48) (xy 125.73 20.32)
+			(xy 127 35.56) (xy 127 25.4)
 		)
 		(stroke
 			(width 0)
@@ -2488,7 +2488,7 @@
 	)
 	(hierarchical_label "Z"
 		(shape input)
-		(at 125.73 20.32 180)
+		(at 127 25.4 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2589,6 +2589,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "3"
@@ -3530,6 +3531,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "5"
@@ -5392,6 +5394,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(pin "5"

@@ -36,17 +36,17 @@ SCK_ADC and SCK_DAC -> pin 13.
 /**************************************************************************/
 
 // Pin definitions:
-#define CS_DAC 20                          // DAC chip select pin
-#define LDAC 17                            // Load DAC pin, not currently used
-#define CS_ADC 21                          // ADC chip select pin
-#define CNV 4                              // ADC CNV pin - initiates a conversion
+#define CS_DAC 10                          // DAC chip select pin
+#define LDAC 7                            // Load DAC pin, not currently used
+#define CS_ADC 9                          // ADC chip select pin
+#define CNV 6                              // ADC CNV pin - initiates a conversion
 #define BUSY 3                             // ADC BUSY pin
 //#define SERIAL_LED 0                       // Indicates serial data transmission
 #define TUNNEL_LED 1                       // Indicates tunneling
 #define STEP1 15
 #define DIR1  14
 #define STEP2 3
-#define DIR2  4
+#define DIR2  5
 #define STEP3 1
 #define DIR3  2
 
@@ -225,57 +225,57 @@ void loop()
 {
   checkSerial(); // Check for incoming serial commands. See "SerialCommands" tab.
   
-  // // Illuminate tunelling LED if the tunneling current is > setpoint/2:
-  // if(abs(input) > setpoint >> 1) digitalWriteFast(TUNNEL_LED, HIGH);
-  // else digitalWriteFast(TUNNEL_LED, LOW);
+  // Illuminate tunelling LED if the tunneling current is > setpoint/2:
+  if(abs(input) > setpoint >> 1) digitalWriteFast(TUNNEL_LED, HIGH);
+  else digitalWriteFast(TUNNEL_LED, LOW);
   
-  // // Send data over USB if a line has been scanned and re-scanned:
-  // if(sendData)
-  // {    
-  //   if(!fillData1) // Print data1
-  //   {
-  //     data1[0] = (byte)((lineCounter >> 8) & 0xFF); // High byte
-  //     data1[1] = (byte)(lineCounter & 0xFF); // Low byte
+  // Send data over USB if a line has been scanned and re-scanned:
+  if(sendData)
+  {    
+    if(!fillData1) // Print data1
+    {
+      data1[0] = (byte)((lineCounter >> 8) & 0xFF); // High byte
+      data1[1] = (byte)(lineCounter & 0xFF); // Low byte
       
-  //     if(serialEnabled)
-  //     {
-  //       console.println("DATA");
-  //       console.write(data1, DATA_BUFFER_LENGTH);
-  //     }
+      if(serialEnabled)
+      {
+        console.println("DATA");
+        console.write(data1, DATA_BUFFER_LENGTH);
+      }
       
-  //     // Uncomment this block to print human-readable data to the serial port:
-  //     /*
-  //     for(unsigned int i = 0; i < pixelsPerLine * 2; i++) // Loop over pixels
-  //     {
-  //       Serial.print((int)((int)data1[4*i+2] << 24 | (int)data1[4*i+3] << 16 |(int)data1[4*i+4] << 8 |(int)data1[4*i+5]));
-  //       Serial.print(" ");
-  //     }
-  //     */
-  //   }
-  //   else
-  //   {
-  //     data2[0] = (byte)((lineCounter >> 8) & 0xFF); // High byte
-  //     data2[1] = (byte)(lineCounter & 0xFF); // Low byte
+      // Uncomment this block to print human-readable data to the serial port:
+      /*
+      for(unsigned int i = 0; i < pixelsPerLine * 2; i++) // Loop over pixels
+      {
+        Serial.print((int)((int)data1[4*i+2] << 24 | (int)data1[4*i+3] << 16 |(int)data1[4*i+4] << 8 |(int)data1[4*i+5]));
+        Serial.print(" ");
+      }
+      */
+    }
+    else
+    {
+      data2[0] = (byte)((lineCounter >> 8) & 0xFF); // High byte
+      data2[1] = (byte)(lineCounter & 0xFF); // Low byte
       
-  //     if(serialEnabled)
-  //     {
-  //       console.println("DATA");
-  //       console.write(data2, DATA_BUFFER_LENGTH);
-  //     }
+      if(serialEnabled)
+      {
+        console.println("DATA");
+        console.write(data2, DATA_BUFFER_LENGTH);
+      }
       
-  //     // Uncomment this block to print human-readable data to the serial port:
-  //     /*
-  //     for(unsigned int i = 0; i < pixelsPerLine * 2; i++) // Loop over pixels
-  //     {
-  //       Serial.print((int)((int)data2[4*i+2] << 24 | (int)data2[4*i+3] << 16 |(int)data2[4*i+4] << 8 |(int)data2[4*i+5]));
-  //       Serial.print(" ");
-  //     }
-  //     */     
-  //   }
-  //   console.println();
+      // Uncomment this block to print human-readable data to the serial port:
+      /*
+      for(unsigned int i = 0; i < pixelsPerLine * 2; i++) // Loop over pixels
+      {
+        Serial.print((int)((int)data2[4*i+2] << 24 | (int)data2[4*i+3] << 16 |(int)data2[4*i+4] << 8 |(int)data2[4*i+5]));
+        Serial.print(" ");
+      }
+      */     
+    }
+    console.println();
     
-  //   sendData = false;
-  // }
+    sendData = false;
+  }
 
   
 }

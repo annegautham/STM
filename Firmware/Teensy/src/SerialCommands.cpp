@@ -212,7 +212,7 @@ void serialCommand(String str)
       else if (command == "MP") 
       {  // Manual +1
         if (manualEnabled) {
-            stepMotors(1000, 1, 1000);  // 1 step in positive direction
+            stepMotors(1000, 0, 1000);  // 1 step in positive direction
             console.println("Stepped +1");
         }
       }
@@ -220,7 +220,7 @@ void serialCommand(String str)
       else if (command == "MN") 
       {  // Manual -1
         if (manualEnabled) {
-          stepMotors(1000, 0, 1000);  // 1 step in negative direction
+          stepMotors(1000, 1, 1000);  // 1 step in negative direction
           console.println("Stepped -1");
         }       
       }
