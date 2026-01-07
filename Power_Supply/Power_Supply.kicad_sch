@@ -6112,7 +6112,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 135.89) (xy 102.87 142.24)
+			(xy 102.87 138.43) (xy 102.87 142.24)
 		)
 		(stroke
 			(width 0)
@@ -7812,7 +7812,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 128.27) (xy 102.87 130.81)
+			(xy 102.87 128.27) (xy 102.87 133.35)
 		)
 		(stroke
 			(width 0)
@@ -13286,7 +13286,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 102.87 133.35 180)
+		(at 102.87 135.89 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13294,7 +13294,7 @@
 		(dnp no)
 		(uuid "a94ea0a4-be63-458c-9e1c-544e732e1693")
 		(property "Reference" "R20"
-			(at 101.346 131.572 0)
+			(at 101.346 132.588 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13303,7 +13303,7 @@
 			)
 		)
 		(property "Value" "56k"
-			(at 101.346 134.366 0)
+			(at 101.346 135.128 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13312,7 +13312,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 102.87 133.35 0)
+			(at 102.87 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13321,7 +13321,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 102.87 133.35 0)
+			(at 102.87 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13330,7 +13330,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 102.87 133.35 0)
+			(at 102.87 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13339,7 +13339,7 @@
 			)
 		)
 		(property "Mouser Part Number" "755-ESR10EZPF5602"
-			(at 102.87 133.35 0)
+			(at 102.87 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
